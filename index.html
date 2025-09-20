@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="../styles/music.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=fast_forward,fast_rewind,play_arrow" />
+        <script src="../script/welcomeScript.js" defer></script>
+    </head>
+    <body>
+        <div class="container section">
+            <div class="muzieknootjes">
+                <div class="noot-1">
+                    &#9835; &#9833;
+                </div>
+                <div class="noot-2">
+                    &#9833;
+                </div>
+                <div class="noot-3">
+                    &#9839; &#9834;
+                </div>
+                <div class="noot-4">
+                    &#9834;
+                </div>
+            </div>
+            <h1 id="intro">Hi, I'm <span class="highlight">Kristina</span>.</h1>
+            <h1 id="duction">I'm a <span class="highlight">full-stack</span> web developer.</h2>
+            <div class="icon-row">
+                <button id="fastRewindButton"><span class="material-symbols-outlined">fast_rewind</span></button>
+                <button id="playButton"><span class="material-symbols-outlined">play_arrow</span></button>
+                <button id="fastForwardButton"><span class="material-symbols-outlined">fast_forward</span></button>
+            </div>
+        </div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const intro = document.getElementById("intro");
+            const duction = document.getElementById("duction");
+
+            const messages = [
+                {
+                    intro: `Hi, I'm <span class="highlight">Kristina</span>.`,
+                    duction: `I'm a <span class="highlight">full-stack</span> web developer.`
+                },
+                {
+                    intro: 'Click the play button to explore my <span class="highlight">portfolio</span>!',
+                    duction: ' '
+                }
+            ]
+
+            let currentIndex = 0;
+
+            function updateText() {
+                intro.innerHTML = messages[currentIndex].intro;
+                duction.innerHTML = messages[currentIndex].duction;
+            }
+
+            document.getElementById("fastForwardButton").addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % messages.length;
+                updateText();
+            });
+
+            document.getElementById("fastRewindButton").addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + messages.length) % messages.length;
+                updateText();
+            });
+        });
+
+        document.getElementById("playButton").addEventListener("click", () => {
+            window.location.href = "./pages/home.html";
+        });
+    </script>
+</html>
