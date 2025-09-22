@@ -3,34 +3,68 @@
     <head>
         <link rel="stylesheet" href="./index.css">
         <link rel="stylesheet" href="../styles/music.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=fast_forward,fast_rewind,play_arrow" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=fast_forward,fast_rewind,play_arrow,search" />
         <script src="../script/welcomeScript.js" defer></script>
     </head>
     <body>
-        <div class="container section">
-            <div class="muzieknootjes">
-                <div class="noot-1">
-                    &#9835; &#9833;
+        <!-- SECTION 1 - INTRO -->
+        <section class="section intro">
+            <div class="container">
+                <div class="muzieknootjes">
+                    <div class="noot-1">
+                        &#9835; &#9833;
+                    </div>
+                    <div class="noot-2">
+                        &#9833;
+                    </div>
+                    <div class="noot-3">
+                        &#9839; &#9834;
+                    </div>
+                    <div class="noot-4">
+                        &#9834;
+                    </div>
                 </div>
-                <div class="noot-2">
-                    &#9833;
-                </div>
-                <div class="noot-3">
-                    &#9839; &#9834;
-                </div>
-                <div class="noot-4">
-                    &#9834;
+                <h1 id="intro">Hi, I'm <span class="highlight">Kristina</span>.</h1>
+                <h1 id="duction">I'm a <span class="highlight auto-type"></span></h1>
+                <div class="icon-row">
+                    <button id="fastRewindButton"><span class="material-symbols-outlined introBut">fast_rewind</span></button>
+                    <button id="playButton"><span class="material-symbols-outlined introBut">play_arrow</span></button>
+                    <button id="fastForwardButton"><span class="material-symbols-outlined introBut">fast_forward</span></button>
                 </div>
             </div>
-            <h1 id="intro">Hi, I'm <span class="highlight">Kristina</span>.</h1>
-            <h1 id="duction">I'm a <span class="highlight">full-stack</span> web developer.</h2>
-            <div class="icon-row">
-                <button id="fastRewindButton"><span class="material-symbols-outlined">fast_rewind</span></button>
-                <button id="playButton"><span class="material-symbols-outlined">play_arrow</span></button>
-                <button id="fastForwardButton"><span class="material-symbols-outlined">fast_forward</span></button>
+        </section>
+
+        <!-- SECTION 2 - ABOUT -->
+        <section class="section about">
+            <nav id="mainNavbar" class="hidden">
+                <div id="left">
+                    <span class="material-symbols-outlined search">search</span>
+                    <h1 id="title"><span class="typing"></span></h1>
+                </div>
+                <div class="navButtons">
+                    <button class="navBut"><img src="./img/mail.png" class="navLogo" id="email"></button>
+                    <button><img src="./img/github.png" class="navLogo" id="github"></button>
+                    <button><img src="./img/linkedin.png" class="navLogo" id="linkedin"></button>
+                </div>
+            </nav>
+            <div class="container">
+                <h1>About Me</h1>
+                <p>
+                    Welcome to my portfolio! I'm Kristina, a passionate full-stack web developer, designer, creator, and musician. I love crafting beautiful and functional web applications that provide seamless user experiences. With a strong foundation in both front-end and back-end technologies, I enjoy bringing ideas to life through code and design.
+                </p>
+                <p>
+                    When I'm not coding, you can find me exploring new design trends, creating digital art, or playing music. I believe that creativity is at the heart of everything I do, and I strive to infuse that creativity into my work.
+                </p>
+                <p>
+                    Feel free to explore my portfolio to see some of the projects I've worked on. If you'd like to get in touch or collaborate on a project, don't hesitate to reach out!
+                </p>
             </div>
-        </div>
+        </section>
     </body>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const intro = document.getElementById("intro");
@@ -39,7 +73,7 @@
             const messages = [
                 {
                     intro: `Hi, I'm <span class="highlight">Kristina</span>.`,
-                    duction: `I'm a <span class="highlight">full-stack</span> web developer.`
+                    duction: `I'm a <span class="highlight auto-type"></span>`
                 },
                 {
                     intro: 'Click the play button to explore my <span class="highlight">portfolio</span>!',
@@ -48,10 +82,29 @@
             ]
 
             let currentIndex = 0;
+            let typed;
+
+            function initTyped() {
+                if (typed) {
+                    typed.destroy();
+                }
+                typed = new Typed(".auto-type", {
+                    strings: ["full-stack web developer.", "designer.", "creator.", "musician."],
+                    typeSpeed: 100,
+                    backSpeed: 100,
+                    loop: true
+                });
+            }
 
             function updateText() {
                 intro.innerHTML = messages[currentIndex].intro;
                 duction.innerHTML = messages[currentIndex].duction;
+
+                if (duction.querySelector(".auto-type")) {
+                    initTyped();
+                } else if (typed) {
+                    typed.destroy();
+                }
             }
 
             document.getElementById("fastForwardButton").addEventListener("click", () => {
@@ -63,10 +116,55 @@
                 currentIndex = (currentIndex - 1 + messages.length) % messages.length;
                 updateText();
             });
+
+            updateText();
         });
 
         document.getElementById("playButton").addEventListener("click", () => {
-            window.location.href = "./pages/home.html";
+            document.getElementById("about").scrollIntoView({
+                behavior: "smooth"
+            });
         });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const intro = document.querySelector(".intro");
+  const navbar = document.getElementById("mainNavbar");
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Intro visible → hide navbar
+        navbar.classList.remove("visible");
+      } else {
+        // Intro passed → show navbar
+        navbar.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  navObserver.observe(intro);
+});
+
+
+    // SECTION 2 - ABOUT
+        let aboutTyped = null; // store Typed instance
+        let hasTypedRun = false; // make sure it only runs once
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasTypedRun) {
+                    hasTypedRun = true; // only run once
+                    aboutTyped = new Typed(".typing", {
+                        strings: ["Kristina Wong"],
+                        typeSpeed: 100,
+                        backSpeed: 100,
+                        loop: false
+                    });
+                }
+            });
+        }, { threshold: 0.5 }); // trigger when 50% of section is visible
+
+        observer.observe(document.querySelector(".about"));
+
     </script>
 </html>

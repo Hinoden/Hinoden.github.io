@@ -1,19 +1,29 @@
 body, html{
-    /* background-color: rgb(47, 79, 206); */
     background-color: rgb(25, 20, 20);
     height: 100%;
     margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.section {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
+    position: relative;
 }
 
 .muzieknootjes {
-    position: absolute; /* So it’s not in normal flow */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: rgb(34, 86, 255);
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 70%;
     height: 100%;
     z-index: -1; /* Send it to the back */
     pointer-events: none; /* So it doesn’t block buttons */
@@ -30,25 +40,25 @@ body, html{
 }
   
 .noot-1 {
-    top: 60px;
+    top: 350px;
     left: 0;
     animation-delay: 0.5s;
 }
   
 .noot-2 {
-    top: 30px;
+    top: 300px;
     left: 30%;
     animation-delay: 1s;
 }
   
 .noot-3 {
-    top: 90px;
+    top: 400px;
     left: 60%;
     animation-delay: 1.5s;
 }
   
 .noot-4 {
-    top: 40px;
+    top: 320px;
     left: 90%;
     animation-delay: 2s;
 }
@@ -81,9 +91,14 @@ button{
 }
 
 .container{
-    position: relative;
+    /* position: relative; */
     text-align: center;
-    z-index: 1;
+    z-index: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .highlight{
@@ -98,8 +113,7 @@ button{
     margin-top: 20px;
 }
 
-.material-symbols-outlined{
-    /* background-color: rgb(240, 161, 33); */
+.introBut{
     background-color: rgb(34, 86, 255);
     font-size: 3vw !important;
     border-radius: 100px;
@@ -111,4 +125,102 @@ button{
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 3vw;
+}
+
+/* SECTION 2 - ABOUT */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#mainNavbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(43, 43, 43);
+    padding: 10px 0px;
+    margin-top: 20px;
+    border-radius: 50px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+#mainNavbar.visible {
+  opacity: 1;
+  transform: translateX(0%) translateY(50%);
+  pointer-events: auto;
+}
+
+#left {
+    display: flex;
+    margin-left: 20px;
+}
+
+.search {
+    color: rgb(34, 86, 255);
+    font-size: 3vw !important;
+    border-radius: 100px;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+#title {
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    margin: 0;
+}
+
+.navButtons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-right: 20px;
+}
+
+
+.navBut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid white;
+    padding: 2.5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#email {
+    width: 30px;
+    height: auto;
+}
+
+#linkedin {
+    width: 30px;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2.5px;
+}
+
+#github {
+    width: 35px;
+    height: auto;
+    border: 1px solid white;
+    border-radius: 100px;
+    background-color: white;
+}
+
+#github:hover, #linkedin:hover, .navBut:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
 }
