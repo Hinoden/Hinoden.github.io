@@ -130,12 +130,15 @@ button{
 /* SECTION 2 - ABOUT */
 .about {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-
     max-width: 1200px;
     margin: 0 auto;
+
+    min-height: 120vh;
+    scroll-snap-align: start;
+    position: relative;
 }
 
 #mainNavbar {
@@ -145,7 +148,7 @@ button{
     justify-content: space-between;
     background-color: rgb(43, 43, 43);
     padding: 10px 0px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     border-radius: 50px;
 
     opacity: 0;
@@ -223,4 +226,66 @@ button{
 #github:hover, #linkedin:hover, .navBut:hover {
     transform: scale(1.1);
     transition: transform 0.2s;
+}
+
+.img-border{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 5px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #bb00ff, #0000ff);
+}
+
+#prof-pic {
+    display: block;
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-container {
+    text-align: center;
+    z-index: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+}
+
+.left-container {
+    flex: 1;
+    background-color: rgb(43, 43, 43);
+    border-radius: 10px;
+}
+
+.right-container {
+    flex: 2;
+    background-color: rgb(43, 43, 43);
+    border-radius: 10px;
+}
+
+.about-text {
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px 20px;
+}
+
+#about-title {
+    color: white;
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+
+#about-sub {
+    color: rgb(255, 255, 255);
+    font-size: 1vw;
+    opacity: 0.3;
+}
+
+#about-desc {
+    color: white;
+    font-size: 1.1vw;
 }

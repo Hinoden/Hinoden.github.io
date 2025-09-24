@@ -35,7 +35,7 @@
         </section>
 
         <!-- SECTION 2 - ABOUT -->
-        <section class="section about">
+        <section class="about">
             <nav id="mainNavbar" class="hidden">
                 <div id="left">
                     <span class="material-symbols-outlined search">search</span>
@@ -47,17 +47,22 @@
                     <button><img src="./img/linkedin.png" class="navLogo" id="linkedin"></button>
                 </div>
             </nav>
-            <div class="container">
-                <h1>About Me</h1>
-                <p>
-                    Welcome to my portfolio! I'm Kristina, a passionate full-stack web developer, designer, creator, and musician. I love crafting beautiful and functional web applications that provide seamless user experiences. With a strong foundation in both front-end and back-end technologies, I enjoy bringing ideas to life through code and design.
-                </p>
-                <p>
-                    When I'm not coding, you can find me exploring new design trends, creating digital art, or playing music. I believe that creativity is at the heart of everything I do, and I strive to infuse that creativity into my work.
-                </p>
-                <p>
-                    Feel free to explore my portfolio to see some of the projects I've worked on. If you'd like to get in touch or collaborate on a project, don't hesitate to reach out!
-                </p>
+            <div class="about-container">
+                <div class="left-container">
+                    <div class="img-border">
+                        <img src="./img/profile-pic.jpg" id="prof-pic"/>
+                    </div>
+                    <div class="about-text">
+                        <h1 id="about-title">Kristina Wong</h1>
+                        <h2 id="about-sub">Web Developer | Engineer | Designer</h2>
+                        <p id="about-desc">I'm an aspiring software engineer passionate about full-stack web development, where I merge creativity with puzzle-solving to produce user-friendly applications.</p>
+                        <p id="about-desc">I strive to build software that simplifies life, enhances accessibility, and brings joy, while constantly seeking new projects to expand my skills.</p>
+                        <p id="about-desc">Outside of coding, I enjoy reading, crocheting, and playing piano and clarinet, hobbies that inspire creativity in my work.</p>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <h1>temp</h1>
+                </div>
             </div>
         </section>
     </body>
@@ -89,7 +94,7 @@
                     typed.destroy();
                 }
                 typed = new Typed(".auto-type", {
-                    strings: ["full-stack web developer.", "designer.", "creator.", "musician."],
+                    strings: ["web developer.", "designer.", "musician."],
                     typeSpeed: 100,
                     backSpeed: 100,
                     loop: true
