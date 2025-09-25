@@ -127,6 +127,8 @@ button{
     font-size: 3vw;
 }
 
+
+/* //////////////////////////////////////////////////////////////// */
 /* SECTION 2 - ABOUT */
 .about {
     display: flex;
@@ -263,8 +265,20 @@ button{
 
 .right-container {
     flex: 2;
+    min-width: 0;
+    /* background-color: rgb(43, 43, 43);
+    border-radius: 10px; */
+}
+
+.projects-container {
     background-color: rgb(43, 43, 43);
     border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.projects-container h1 {
+    margin: 0;
 }
 
 .about-text {
@@ -288,4 +302,141 @@ button{
 #about-desc {
     color: white;
     font-size: 1.1vw;
+}
+
+
+/* project carousel */
+.carousel-container{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0px 0px 0px;
+}
+
+.carousel-item{
+    width: auto;
+    flex-shrink: 0;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 10px !important;
+    border-radius: 10px;
+}
+
+.carousel-item:hover {
+    cursor: pointer;
+    background-color: rgb(62, 62, 62);
+}
+
+.carousel-track{
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    padding-inline: 0;
+}
+
+#project-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 1.6vw;
+    padding: 0;
+    margin: 0;
+}
+
+#project-img {
+    width: auto;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.img-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.project-name {
+    font-size: 1vw;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+
+.project-company {
+    display: flex;
+    align-items: center;
+    color: rgb(155, 155, 155);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    font-size: 0.9vw;
+    margin: 0;
+    padding: 0;
+}
+
+.companyIcon {
+    font-size: 1.2vw !important;
+    color: rgb(43, 43, 43);
+    background-color: rgb(155, 155, 155);
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+.aboutBut {
+    background-color: rgb(34, 86, 255);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 30%;
+    left: 90%;
+    transform: translate(-50%, 20px); /* start lower */
+    
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.aboutBut1 {
+    background-color: rgb(34, 86, 255);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 25%;
+    left: 90%;
+    transform: translate(-50%, 20px); /* start lower */
+    
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.projectBut {
+    font-size: 2.2vw !important;
+}
+
+.img-wrapper:hover .aboutBut{
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.img-wrapper:hover .aboutBut1{
+    opacity: 1;
+    transform: translate(-50%, 0);
 }
