@@ -4,8 +4,6 @@
         <link rel="stylesheet" href="./index.css">
         <link rel="stylesheet" href="../styles/music.css">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=apartment,fast_forward,fast_rewind,play_arrow,search" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" /> -->
     </head>
     <body>
         <!-- SECTION 1 - INTRO -->
@@ -65,7 +63,7 @@
                     <div class="projects-container">
                         <h1 id="project-title">Featured Projects</h1>
                         <div class="carousel-container">
-                            <!-- <button class="carousel-btn left">&#10094;</button> -->
+                            <button class="carouselBtn prevBtn"><i class="material-icons-sharp nextPrev">arrow_back_ios</i></button>
                             <div class="carousel-track">
                                 <div class="carousel-item">
                                     <div class="img-wrapper">
@@ -97,6 +95,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <button class="carouselBtn nextBtn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
                         </div>
                     </div>
                 </div>
@@ -168,27 +167,27 @@
             });
         });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const intro = document.querySelector(".intro");
-  const navbar = document.getElementById("mainNavbar");
+        document.addEventListener("DOMContentLoaded", () => {
+        const intro = document.querySelector(".intro");
+        const navbar = document.getElementById("mainNavbar");
 
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Intro visible → hide navbar
-        navbar.classList.remove("visible");
-      } else {
-        // Intro passed → show navbar
-        navbar.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.2 });
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Intro visible → hide navbar
+                navbar.classList.remove("visible");
+            } else {
+                // Intro passed → show navbar
+                navbar.classList.add("visible");
+            }
+            });
+        }, { threshold: 0.2 });
 
-  navObserver.observe(intro);
-});
+        navObserver.observe(intro);
+        });
 
 
-    // SECTION 2 - ABOUT
+        // SECTION 2 - ABOUT
         let aboutTyped = null; // store Typed instance
         let hasTypedRun = false; // make sure it only runs once
 
@@ -207,6 +206,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }, { threshold: 0.5 }); // trigger when 50% of section is visible
 
         observer.observe(document.querySelector(".about"));
+
+        // CAROUSEL
+        const track = document.querySelector('.carousel-track');
+        const leftBtn = document.querySelector('.carouselBtn.prevBtn');
+        const rightBtn = document.querySelector('.carouselBtn.nextBtn');
+
+        const scrollAmount = 600;
+
+        leftBtn.addEventListener('click', () => {
+            track.scrollBy({left: -scrollAmount, behavior: 'smooth'});
+        });
+
+        rightBtn.addEventListener('click', () => {
+            track.scrollBy({left: scrollAmount, behavior: 'smooth'});
+        });
 
     </script>
 </html>

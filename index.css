@@ -440,3 +440,39 @@ button{
     opacity: 1;
     transform: translate(-50%, 0);
 }
+
+.carouselBtn {
+    position: absolute;
+    background-color: rgb(25, 20, 20);
+    color: rgb(155, 155, 155);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.carouselBtn.nextBtn {
+    right: 15px;
+    z-index: 100;
+}
+
+.carouselBtn.prevBtn {
+    left: 0px;
+    z-index: 100;
+}
+
+.carousel-container:hover .carouselBtn.nextBtn {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.carousel-container:hover .carouselBtn.prevBtn {
+    opacity: 1;
+    transform: translate(50%, 0);
+}
