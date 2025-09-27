@@ -476,3 +476,69 @@ button{
     opacity: 1;
     transform: translate(50%, 0);
 }
+
+.hidden {
+  display: none;
+}
+
+#detail-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 2vw;
+    padding: 0;
+    margin: 0;
+}
+
+#detail-image {
+    width: auto;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#detail-company {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.companyIconHidden {
+    font-size: 1.4vw !important;
+    color: rgb(155, 155, 155);
+    background-color: rgb(43, 43, 43);
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+#detail-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: left;
+}
+
+#liveBtn, #repoBtn {
+    background-color: rgb(34, 86, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 1vw;
+    margin-top: 10px;
+}
+
+#backBtn {
+    background-color: #bb00ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 1vw;
+    margin-top: 10px;
+}
