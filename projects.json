@@ -3,8 +3,8 @@
         "id": "AI-Opportunity-Backpack",
         "name": "AI Opportunity Backpack",
         "company": "Conectado Inc.",
-        "image": "./img/conectado.png",
-        "description": "The AI Opportunity Backpack is an application featuring an AI chatbot that helps members from underrepresented communities find opportunities such as internships and mentorships, and connect with other users. Built with ReactJS, Firebase, and AI Genkit, it's currently live for Conectado afiliates!",
+        "image": "./img/projects/conectado.png",
+        "description": "The AI Opportunity Backpack is an application featuring an AI chatbot that helps members from underrepresented communities find opportunities such as internships and mentorships, and connect with other users. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>Firebase</span>, and <span class='highlightText'>AI Genkit</span>. It's currently live for Conectado afiliates!",
         "link": "https://aibackpack.conectado.com/",
         "github": ""
     },
@@ -12,8 +12,8 @@
         "id": "Library-Applicatiion",
         "name": "Library Application",
         "company": "Personal Project",
-        "image": "./img/book-collection-app.png",
-        "description": "The Library Application is a web application with the goal of helping users keep track of their book collections. Built with ReactJS, SQL, and using a Clever-Cloud database, it allows users to add and delete books from their collection, as well as mark books as read, currently reading, dropped, or want to read.",
+        "image": "./img/projects/book-collection-app.png",
+        "description": "The Library Application was developed with the goal of helping users keep track of their book collections. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>SQL</span>, and using a <span class='highlightText'>Clever-Cloud</span> database, it allows users to add and delete books from their collection, as well as mark books as read, currently reading, dropped, or want to read.",
         "link": "https://book-collection-web-project.vercel.app/",
         "github": "https://github.com/Hinoden/Book-Collection-Web-Project"
     },
@@ -21,8 +21,8 @@
         "id": "Netflix-Clone",
         "name": "Netflix Clone",
         "company": "Personal Project",
-        "image": "./img/netflix-app.png",
-        "description": "The Netflix Clone is a web application that mimics the functionality and design of Netflix. Built with ReactJS and the TMDB API, it allows users to browse and search for movies and TV shows, view details about each title, and watch trailers.",
+        "image": "./img/projects/netflix-app.png",
+        "description": "The Netflix Clone is a web application that mimics the functionality and design of Netflix. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>MongoDB</span>, and the <span class='highlightText'>TMDB API</span>, it allows users to browse and search for movies and TV shows, view details about each title, and watch trailers.",
         "link": "https://netflix-clone-wgwy.onrender.com/",
         "github": "https://github.com/Hinoden/Netflix-Clone"
     },
@@ -30,8 +30,8 @@
         "id": "Hinodle",
         "name": "Hinodle",
         "company": "Personal Project",
-        "image": "./img/hinodle.png",
-        "description": "Hinodle is an interactive Wordle clone that allows users to play the popular word-guessing game with no daily limit. Built with ReactJS, it features a dynamic interface and tracks keyboard inputs to enhance the gaming experience.",
+        "image": "./img/projects/hinodle.png",
+        "description": "Hinodle is an interactive Wordle clone that allows users to play the popular word-guessing game with no daily limit. Built with <span class='highlightText'>ReactJS</span>, it features a dynamic interface and tracks keyboard inputs to enhance the gaming experience.",
         "link": "https://hino-dle-app.vercel.app/",
         "github": "https://github.com/Hinoden/HinoDle-App"
     }
