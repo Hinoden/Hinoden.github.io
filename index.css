@@ -6,6 +6,7 @@ body, html{
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    min-height: 100vh;
 }
 
 .section {
@@ -141,8 +142,6 @@ button{
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-
-    min-height: 130vh;
     scroll-snap-align: start;
     position: relative;
 }
@@ -244,7 +243,7 @@ button{
 
 #prof-pic {
     display: block;
-    width: 250px;
+    width: 200px;
     height: auto;
     border-radius: 10px;
 }
@@ -252,13 +251,11 @@ button{
 .about-container {
     text-align: center;
     z-index: 0;
-    height: 100vh;
     display: flex;
     justify-content: space-between;
     gap: 20px;
     width: 100%;
     margin-top: 60px;
-    height: calc(100vh - 110px);
 }
 
 .left-container {
@@ -707,33 +704,6 @@ button{
     transform: translate(50%, 0);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* CALENDAR */
 .calendar {
     background-color: rgb(43, 43, 43);
@@ -943,5 +913,51 @@ text.ContributionCalendar-label {
     .table-column {
         display: block;
         width: 100%;
+    }
+}
+
+/* CREDITS */
+.credits{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.credText{
+    margin: 5px;
+    text-align: center;
+}
+
+.credLink{
+    font-size: inherit;
+    color: rgb(34, 86, 255);
+}
+
+/* CHANGING SCREEN SIZE */
+@media screen and (max-width: 800px) {      /* Medium Size */
+    #intro, #duction {
+        font-size: 4vw;
+    }
+
+    .introBut{
+        background-color: rgb(34, 86, 255);
+        font-size: 4vw !important;
+        border-radius: 100px;
+        color: white;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #intro, #duction {
+        font-size: 5vw;
+    }
+
+    .introBut{
+        background-color: rgb(34, 86, 255);
+        font-size: 5vw !important;
+        border-radius: 100px;
+        color: white;
+        padding: 5px;
     }
 }
