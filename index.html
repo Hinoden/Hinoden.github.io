@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="./index.css">
         <link rel="stylesheet" href="../styles/music.css">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/> -->
     </head>
     <body>
         <!-- SECTION 1 - INTRO -->
@@ -41,9 +42,9 @@
                     <h1 id="title"><span class="typing"></span></h1>
                 </div>
                 <div class="navButtons">
-                    <button class="navBut"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button>
-                    <button><img src="./img/navbar/github.png" class="navLogo" id="github"></button>
-                    <button><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button>
+                    <a href="mailto:krwong3@gmail.com" target="_blank" rel="noopener noreferrer"><button class="navBut"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button></a>
+                    <a href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer"><button><img src="./img/navbar/github.png" class="navLogo" id="github"></button></a>
+                    <a href="https://linkedin.com/in/kristina-wong-648199242" target="_blank" rel="noopener noreferrer"><button><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
                 </div>
             </nav>
             <div class="about-container">
@@ -135,6 +136,10 @@
                             <button class="carousel2Btn next2Btn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
                         </div>
                     </div>
+                    <div class="calendar">
+                        <!-- Loading stuff -->
+                        Loading the data just for you.
+                    </div>
                 </div>
             </div>
         </section>
@@ -143,6 +148,7 @@
 
     <!-- JAVASCRIPT -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const intro = document.getElementById("intro");
@@ -366,6 +372,8 @@
             track.scrollBy({ left: 300, behavior: "smooth" });
         });
         });
+
+        GitHubCalendar(".calendar", "Hinoden", { responsive: true, global_stats: false });
 
     </script>
 </html>
