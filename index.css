@@ -133,6 +133,14 @@ button{
 }
 
 
+
+
+
+
+
+
+
+
 /* //////////////////////////////////////////////////////////////// */
 /* SECTION 2 - ABOUT */
 .about {
@@ -144,6 +152,8 @@ button{
     margin: 0 auto;
     scroll-snap-align: start;
     position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 #mainNavbar {
@@ -153,7 +163,6 @@ button{
     justify-content: space-between;
     background-color: rgb(43, 43, 43);
     padding: 10px 0px;
-    /* margin-top: 20px; */
     border-radius: 50px;
 
     opacity: 0;
@@ -170,6 +179,7 @@ button{
 #left {
     display: flex;
     margin-left: 20px;
+    align-items: center;
 }
 
 .search {
@@ -235,7 +245,7 @@ button{
 
 .img-border{
     display: inline-block;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     padding: 5px;
     border-radius: 10px;
     background: linear-gradient(45deg, #bb00ff, #0000ff);
@@ -266,6 +276,7 @@ button{
 .profile-container {
     background-color: rgb(43, 43, 43);
     border-radius: 10px;
+    padding: 20px;
 }
 
 .right-container {
@@ -289,8 +300,8 @@ button{
 .about-text {
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0px 20px;
-    padding: 0 0 10px 0;
+    margin: 0px 5px;
+    /* padding: 0 0 10px 0; */
 }
 
 #about-title {
@@ -330,7 +341,7 @@ button{
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 20px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
 }
 
 .carousel-item{
@@ -568,7 +579,7 @@ button{
     align-items: center;
     justify-content: center;
     gap: 10px;
-    /* padding: 20px 0px 0px 0px; */
+    padding: 10px 0px 0px 0px;
 }
 
 .carousel2-container:hover .carousel2Btn.next2Btn {
@@ -946,9 +957,83 @@ text.ContributionCalendar-label {
         color: white;
         padding: 5px;
     }
+
+    #about-title {
+        font-size: 3vw;
+        margin-bottom: 10px;
+    }
+
+    #about-sub {
+        color: rgb(255, 255, 255);
+        font-size: 1.4vw;
+        opacity: 0.3;
+    }
+
+    #about-desc {
+        color: white;
+        font-size: 1.5vw;
+    }
+
+    #project-title {
+        font-size: 2.5vw;
+    }
+
+    #project-img {
+        width: auto;
+        height: 180px;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+
+    .project-name {
+        font-size: 1.5vw;
+    }
+
+    .project-company {
+        font-size: 1.5vw;
+    }
+
+    .companyIcon {
+        font-size: 1.2vw !important;
+        color: rgb(43, 43, 43);
+        background-color: rgb(155, 155, 155);
+        border-radius: 2px;
+        margin-right: 5px;
+    }
+
+    .companyIconHidden {
+        font-size: 2.5vw !important;
+        border-radius: 2px;
+        margin-right: 5px;
+    }
+
+    .carousel-track .projectBut {
+        font-size: 5vw !important;
+    }
+
+    #detail-text {
+        font-size: 1.6vw;
+    }
+
+    #liveBtn, #repoBtn {
+        font-size: 1.5vw;
+    }
+
+    #backBtn {
+        font-size: 1.5vw;
+    }
+
+    #skills-title {
+        font-size: 2.5vw;
+    }
+
+    .skill-name {
+        font-size: 1.5vw;
+    }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {      /* Small Size --> Will be a singular column */
+    /* INTRO SECTION */
     #intro, #duction {
         font-size: 5vw;
     }
@@ -959,5 +1044,25 @@ text.ContributionCalendar-label {
         border-radius: 100px;
         color: white;
         padding: 5px;
+    }
+
+    #left {
+        display: flex;
+        margin-left: 20px;
+    }
+
+    .search {
+        color: rgb(34, 86, 255);
+        font-size: 6vw !important;
+        border-radius: 100px;
+        padding: 5px;
+        margin-right: 20px;
+    }
+
+    #title {
+        color: white;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 25px;
+        margin: 0;
     }
 }
