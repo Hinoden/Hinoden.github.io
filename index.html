@@ -7,152 +7,158 @@
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     </head>
     <body>
-        <!-- SECTION 1 - INTRO -->
-        <section class="section intro">
-            <div class="container">
-                <div class="muzieknootjes">
-                    <div class="noot-1">
-                        &#9835; &#9833;
+        <!-- LOADER -->
+         <div id="preloader">
+            <div class="spinner"></div>
+         </div>
+        <div id="content" style="display: none;">
+            <!-- SECTION 1 - INTRO -->
+            <section class="section intro">
+                <div class="container">
+                    <div class="muzieknootjes">
+                        <div class="noot-1">
+                            &#9835; &#9833;
+                        </div>
+                        <div class="noot-2">
+                            &#9833;
+                        </div>
+                        <div class="noot-3">
+                            &#9839; &#9834;
+                        </div>
+                        <div class="noot-4">
+                            &#9834;
+                        </div>
                     </div>
-                    <div class="noot-2">
-                        &#9833;
-                    </div>
-                    <div class="noot-3">
-                        &#9839; &#9834;
-                    </div>
-                    <div class="noot-4">
-                        &#9834;
+                    <h1 id="intro">Hi, I'm <span class="highlight">Kristina</span>.</h1>
+                    <h1 id="duction">I'm a <span class="highlight auto-type"></span></h1>
+                    <div class="icon-row">
+                        <button id="fastRewindButton"><i class="material-icons-outlined introBut">fast_rewind</i></button>
+                        <button id="playButton"><i class="material-icons-outlined introBut">play_arrow</i></button>
+                        <button id="fastForwardButton"><i class="material-icons-outlined introBut">fast_forward</i></button>
                     </div>
                 </div>
-                <h1 id="intro">Hi, I'm <span class="highlight">Kristina</span>.</h1>
-                <h1 id="duction">I'm a <span class="highlight auto-type"></span></h1>
-                <div class="icon-row">
-                    <button id="fastRewindButton"><i class="material-icons-outlined introBut">fast_rewind</i></button>
-                    <button id="playButton"><i class="material-icons-outlined introBut">play_arrow</i></button>
-                    <button id="fastForwardButton"><i class="material-icons-outlined introBut">fast_forward</i></button>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- SECTION 2 - ABOUT -->
-        <section class="about">
-            <nav id="mainNavbar" class="hidden">
-                <div id="left">
-                    <i class="material-icons-outlined search">search</i>
-                    <h1 id="title"><span class="typing"></span></h1>
-                </div>
-                <div class="navButtons">
-                    <a href="mailto:krwong3@gmail.com" target="_blank" rel="noopener noreferrer"><button class="navBut"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button></a>
-                    <a href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer"><button><img src="./img/navbar/github.png" class="navLogo" id="github"></button></a>
-                    <a href="https://linkedin.com/in/kristina-wong-648199242" target="_blank" rel="noopener noreferrer"><button><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
-                </div>
-            </nav>
-            <div class="about-container">
-                <div class="left-container">
-                    <div class="profile-container reveal">
-                        <div class="img-border">
-                            <img src="./img/profile-pic.jpg" id="prof-pic"/>
-                        </div>
-                        <div class="about-text">
-                            <h1 id="about-title">Kristina Wong</h1>
-                            <h2 id="about-sub">Web Developer | Engineer | Designer</h2>
-                            <p id="about-desc">I'm an aspiring software engineer passionate about full-stack web development, where I merge creativity with puzzle-solving to produce user-friendly applications.</p>
-                            <p id="about-desc">I strive to build software that simplifies life, enhances accessibility, and brings joy, while constantly seeking new projects to expand my skills.</p>
-                            <p id="about-desc">Outside of coding, I enjoy reading, crocheting, and playing piano and clarinet, hobbies that inspire the creativity in my work.</p>
-                            <p id="about-desc">I'd love to connect with you!</p>
-                        </div>
+            <!-- SECTION 2 - ABOUT -->
+            <section class="about">
+                <nav id="mainNavbar" class="hidden">
+                    <div id="left">
+                        <i class="material-icons-outlined search">search</i>
+                        <h1 id="title"><span class="typing"></span></h1>
                     </div>
-                    <div class="music-container reveal">
-                        <iframe class="musicPlayer" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5JZ7CnR6gTvEMKX4g70Amv?utm_source=generator&theme=0" width="97%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <div class="navButtons">
+                        <a href="mailto:krwong3@gmail.com" target="_blank" rel="noopener noreferrer"><button class="navBut"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button></a>
+                        <a href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer"><button><img src="./img/navbar/github.png" class="navLogo" id="github"></button></a>
+                        <a href="https://linkedin.com/in/kristina-wong-648199242" target="_blank" rel="noopener noreferrer"><button><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
                     </div>
-                </div>
-                <div class="right-container">
-                    <div class="projects-container reveal">
-                        <h1 id="project-title">Featured Projects</h1>
-                        <div class="carousel-container">
-                            <button class="carouselBtn prevBtn"><i class="material-icons-sharp nextPrev">arrow_back_ios</i></button>
-                            <div class="carousel-track">
-                                <!-- Carousel items will be injected here -->
+                </nav>
+                <div class="about-container">
+                    <div class="left-container">
+                        <div class="profile-container reveal">
+                            <div class="img-border">
+                                <img src="./img/profile-pic.jpg" id="prof-pic"/>
                             </div>
-                            <button class="carouselBtn nextBtn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
-                        </div>
-                        <div class="project-detail hidden">
-                            <h2 id="detail-title"></h2>
-                            <p id="detail-company"></p>
-                            <img id="detail-image" />
-                            <p id="detail-text"></p>
-                            <div class="project-links">
-                                <button id="liveBtn">Check it out here!</button>
-                                <button id="repoBtn">View the repo on GitHub</button>
-                                <button id="backBtn">Back</button>
+                            <div class="about-text">
+                                <h1 id="about-title">Kristina Wong</h1>
+                                <h2 id="about-sub">Web Developer | Engineer | Designer</h2>
+                                <p id="about-desc">I'm an aspiring software engineer passionate about full-stack web development, where I merge creativity with puzzle-solving to produce user-friendly applications.</p>
+                                <p id="about-desc">I strive to build software that simplifies life, enhances accessibility, and brings joy, while constantly seeking new projects to expand my skills.</p>
+                                <p id="about-desc">Outside of coding, I enjoy reading, crocheting, and playing piano and clarinet, hobbies that inspire the creativity in my work.</p>
+                                <p id="about-desc">I'd love to connect with you!</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="skills-container reveal">
-                        <h1 id="skills-title">Skills</h1>
-                        <div class="carousel2-container">
-                            <button class="carousel2Btn prev2Btn"><i class="material-icons-sharp nextPrev">arrow_back_ios</i></button>
-                            <div class="carousel2-track skills-track">
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img" src="./img/skills/react.svg">
-                                    <p class="skill-name">React</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img" src="./img/skills/nodejs.svg">
-                                    <p class="skill-name">NodeJS</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img" src="./img/skills/mongodb.svg">
-                                    <p class="skill-name">MongoDB</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img" src="./img/skills/sql.svg">
-                                    <p class="skill-name">SQL</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img2" src="./img/skills/javascript.svg">
-                                    <p class="skill-name">JavaScript</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img" src="./img/skills/html.svg">
-                                    <p class="skill-name">HTML</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img" src="./img/skills/css.svg">
-                                    <p class="skill-name">CSS</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img" src="./img/skills/c-plusplus.svg">
-                                    <p class="skill-name">C++</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                                <div class="img-wrapper carousel-item">
-                                    <img id="skill-img" src="./img/skills/python.svg">
-                                    <p class="skill-name">Python</p>
-                                    <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                                </div>
-                            </div>
-                            <button class="carousel2Btn next2Btn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
+                        <div class="music-container reveal">
+                            <iframe class="musicPlayer" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5JZ7CnR6gTvEMKX4g70Amv?utm_source=generator&theme=0" width="97%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </div>
                     </div>
-                    <div class="calendar reveal">
-                        <!-- Loading stuff -->
-                        Loading the data just for you.
+                    <div class="right-container">
+                        <div class="projects-container reveal">
+                            <h1 id="project-title">Featured Projects</h1>
+                            <div class="carousel-container">
+                                <button class="carouselBtn prevBtn"><i class="material-icons-sharp nextPrev">arrow_back_ios</i></button>
+                                <div class="carousel-track">
+                                    <!-- Carousel items will be injected here -->
+                                </div>
+                                <button class="carouselBtn nextBtn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
+                            </div>
+                            <div class="project-detail hidden">
+                                <h2 id="detail-title"></h2>
+                                <p id="detail-company"></p>
+                                <img id="detail-image" />
+                                <p id="detail-text"></p>
+                                <div class="project-links">
+                                    <button id="liveBtn">Check it out here!</button>
+                                    <button id="repoBtn">View the repo on GitHub</button>
+                                    <button id="backBtn">Back</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-container reveal">
+                            <h1 id="skills-title">Skills</h1>
+                            <div class="carousel2-container">
+                                <button class="carousel2Btn prev2Btn"><i class="material-icons-sharp nextPrev">arrow_back_ios</i></button>
+                                <div class="carousel2-track skills-track">
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img" src="./img/skills/react.svg">
+                                        <p class="skill-name">React</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img" src="./img/skills/nodejs.svg">
+                                        <p class="skill-name">NodeJS</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img" src="./img/skills/mongodb.svg">
+                                        <p class="skill-name">MongoDB</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img" src="./img/skills/sql.svg">
+                                        <p class="skill-name">SQL</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img2" src="./img/skills/javascript.svg">
+                                        <p class="skill-name">JavaScript</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img" src="./img/skills/html.svg">
+                                        <p class="skill-name">HTML</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img" src="./img/skills/css.svg">
+                                        <p class="skill-name">CSS</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img" src="./img/skills/c-plusplus.svg">
+                                        <p class="skill-name">C++</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                    <div class="img-wrapper carousel-item">
+                                        <img id="skill-img" src="./img/skills/python.svg">
+                                        <p class="skill-name">Python</p>
+                                        <div class="skillsBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                                    </div>
+                                </div>
+                                <button class="carousel2Btn next2Btn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
+                            </div>
+                        </div>
+                        <div class="calendar">
+                            <!-- Loading stuff -->
+                            Loading the data just for you.
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="credits reveal">
-                <p class="credText">&copy; Created by <a class="credLink" href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer">Kristina Wong</a>. Updated October 2025</p>
-                <p class="credText">Check out the source code <a class="credLink" href="https://github.com/Hinoden/Temp-Portfolio" target="_blank" rel="noopener noreferrer">here</a>!</p>
-            </div>
-        </section>
+                <div class="credits">
+                    <p class="credText">&copy; Created by <a class="credLink" href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer">Kristina Wong</a>. Updated October 2025</p>
+                    <p class="credText">Check out the source code <a class="credLink" href="https://github.com/Hinoden/Temp-Portfolio" target="_blank" rel="noopener noreferrer">here</a>!</p>
+                </div>
+            </section>
+        </div>
     </body>
 
 
@@ -160,6 +166,14 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <script>
+        window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        const content = document.getElementById("content");
+
+        preloader.style.display = "none";   // hide loader
+        content.style.display = "block";    // show page
+        });
+
         document.addEventListener("DOMContentLoaded", () => {
             const intro = document.getElementById("intro");
             const duction = document.getElementById("duction");
