@@ -18,6 +18,15 @@
         "github": "https://github.com/Hinoden/Book-Collection-Web-Project"
     },
     {
+        "id": "World-Journal-Application",
+        "name": "World Journal Application",
+        "company": "Personal Project",
+        "image": "./img/projects/world-journal-app.png",
+        "description": "The World Journal Project was created with the goal of bringing together community through daily journal entries. Built with <span class='highlightText'>ReactJS</span> and using a <span class='highlightText'>MongoDB</span> database, it allows users to add their own daily journal entries to our collection, as well as browse through our collection of journal entries.",
+        "link": "https://world-journal-project.vercel.app/",
+        "github": "https://github.com/Hinoden/World-Journal-Project"
+    },
+    {
         "id": "Netflix-Clone",
         "name": "Netflix Clone",
         "company": "Personal Project",
