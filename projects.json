@@ -4,7 +4,7 @@
         "name": "AI Opportunity Backpack",
         "company": "Conectado Inc.",
         "image": "./img/projects/conectado.png",
-        "description": "The AI Opportunity Backpack is an application featuring an AI chatbot that helps members from underrepresented communities find opportunities such as internships and mentorships, and connect with other users. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>Firebase</span>, and <span class='highlightText'>AI Genkit</span>. It's currently live for Conectado afiliates!",
+        "description": "The AI Opportunity Backpack is an application featuring an AI chatbot that helps members from underrepresented communities find opportunities such as internships and mentorships, and connect with other users. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>Firebase</span>, and <span class='highlightText'>AI Genkit</span>. It's currently live!",
         "link": "https://aibackpack.conectado.com/",
         "github": ""
     },
