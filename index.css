@@ -311,11 +311,11 @@ button{
     gap: 20px;
     width: 100%;
     margin-top: 60px;
+    align-items: stretch;
 }
 
 .left-container {
     flex: 1;
-    height: auto;
 }
 
 .profile-container {
@@ -327,6 +327,8 @@ button{
 .right-container {
     flex: 2;
     min-width: 0;
+    overflow-y: auto;
+    min-height: 0;
     /* background-color: rgb(43, 43, 43);
     border-radius: 10px; */
 }
@@ -758,6 +760,78 @@ button{
 .carousel2-container:hover .carousel2Btn.prev2Btn {
     opacity: 1;
     transform: translate(50%, 0);
+}
+
+/* COURSES  */
+.courses-container {
+    background-color: rgb(43, 43, 43);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+#courses-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 1.6vw;
+    padding: 0;
+    margin: 0;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-container {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.grid-container p{
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+.grid-left {
+    width: 90px;
+    flex: 1;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(60, 60, 60);
+    aspect-ratio: 1/1;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.grid-container:hover .grid-left {
+    background-color: rgb(82, 82, 82);
+}
+
+.grid-right {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+#course-school {
+    font-size: 0.9vw;
 }
 
 /* CALENDAR */

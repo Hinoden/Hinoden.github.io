@@ -147,6 +147,119 @@
                                 <button class="carousel2Btn next2Btn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
                             </div>
                         </div>
+                        <div class="courses-container reveal">
+                            <h1 id="courses-title">Relevant Coursework</h1>
+                            <div class="courses-grid">
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p>CSE</p>
+                                            <p>120</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Software Engineering</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p id="class-left">CSE</p>
+                                            <p id="class-left">108</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Full Stack Web Development</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p>CSE</p>
+                                            <p>177</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Database Systems Implementation</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p>CSE</p>
+                                            <p>130</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Cryptography</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p>CSE</p>
+                                            <p>100</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Algorithm Design and Analysis</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p>CSE</p>
+                                            <p>162</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Mobile Computing</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p>CSE</p>
+                                            <p>030</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Data Structures</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p>CSE</p>
+                                            <p>031</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Object Oriented Programming</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                                <div class="grid-container">
+                                    <div class="grid-left">
+                                        <div class="grid-box">
+                                            <p>CSE</p>
+                                            <p>165</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-right">
+                                        <p>Discrete Mathematics</p>
+                                        <p id="course-school">UC Merced</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="calendar">
                             <!-- Loading stuff -->
                             Loading the data just for you.
@@ -227,6 +340,19 @@
 
             updateText();
         });
+
+        const left = document.querySelector('.left-container');
+        const right = document.querySelector('.right-container');
+
+        if (left && right) {
+            const observer = new ResizeObserver(entries => {
+                for (let entry of entries) {
+                    right.style.height = `${entry.contentRect.height}px`;
+                }
+            });
+
+            observer.observe(left);
+        }
 
         document.getElementById("playButton").addEventListener("click", () => {
             document.querySelector(".about").scrollIntoView({
