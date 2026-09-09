@@ -27,6 +27,15 @@
         "github": "https://github.com/Hinoden/World-Journal-Project"
     },
     {
+        "id": "Tomo-Graph",
+        "name": "Tomo Graph",
+        "company": "Personal Project",
+        "image": "./img/projects/tomo-graph.png",
+        "description": "Tomo Graph is an interactive graphing application based on Nintendo's Tomodachi Life. Built with <span class='highlightText'>ReactJS</span> and <span class='highlightText'>ReactFlow</span>, it allows users to create their own custom relationship graphs based on their Tomodachi Life Islands.",
+        "link": "https://tomo-graph.vercel.app/",
+        "github": "https://github.com/Hinoden/tomo-graph"
+    },
+    {
         "id": "Hinodle",
         "name": "Hinodle",
         "company": "Personal Project",
