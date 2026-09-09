@@ -498,8 +498,8 @@ button{
 }
 
 .music-container {
-  background: linear-gradient(45deg, #bb00ff, #0000ff);          /* background shows above */
-  border-radius: 16px;        /* match your iframe rounding */
+  background: linear-gradient(45deg, #bb00ff, #0000ff);
+  border-radius: 16px;
   padding-top: 5px;
   padding-bottom: 0;
   overflow: hidden;

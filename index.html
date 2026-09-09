@@ -277,8 +277,33 @@
                     <a href="mailto:krwong3@gmail.com" target="_blank" rel="noopener noreferrer"><button class="menu-but email"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button></a>
                     <a href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer"><button class="menu-but github"><img src="./img/navbar/github.png" class="navLogo" id="github"></button></a>
                     <a href="https://linkedin.com/in/kristina-wong-648199242" target="_blank" rel="noopener noreferrer"><button class="menu-but linkedin"><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
-                    <a href="./img/Full Stack Resume.pdf" target="_blank" rel="noopener noreferrer"><button class="menu-but resume"><i class="material-icons-outlined resumeBut">assignment</i></button></a>
+                    <!-- <a href="./img/Full Stack Resume.pdf" target="_blank" rel="noopener noreferrer"><button class="menu-but resume"><i class="material-icons-outlined resumeBut">assignment</i></button></a> -->
                 </div>
+            </div>
+        </div>
+        <div class="spotify-player">
+            <div class="spotify-player-left">
+                <img id="spotify-player-img" src="" alt="">
+
+                <div class="spotify-playlist-title">
+                    <p id="spotify-playlist-song"></p>
+                    <p id="spotify-playlist-artist"></p>
+                </div>
+
+                <button class="spotify-playlist-add">
+                    <i class="material-icons-outlined">add_circle_outline</i>
+                </button>
+            </div>
+            <div class="spotify-player-mid">
+                <div class="spotify-player-top">
+
+                </div>
+                <div class="spotify-player-bottom">
+
+                </div>
+            </div>
+            <div class="spotify-player-right">
+
             </div>
         </div>
     </body>
@@ -507,11 +532,12 @@ overlay.addEventListener('click', (e) => {
 
             // Click handler for items
             track.querySelectorAll(".img-wrapper").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const projectId = btn.dataset.id;
-                const project = projects.find(p => p.id === projectId);
-                showProjectDetail(project);
-            });
+                btn.addEventListener("click", () => {
+                    const projectId = btn.dataset.id;
+                    const project = projects.find(p => p.id === projectId);
+                    showProjectDetail(project);
+                    updateProjectPlayer(project);
+                });
             });
         }
 
@@ -556,6 +582,11 @@ overlay.addEventListener('click', (e) => {
         });
 
         GitHubCalendar(".calendar", "Hinoden", { responsive: true, global_stats: false });
+
+        // BOTTOM PLAYER
+        function updateProjectPlayer(project){
+
+        }
 
         // ANIMATIONS
         const reveals = document.querySelectorAll('.reveal');
