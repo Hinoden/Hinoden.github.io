@@ -46,11 +46,6 @@
                         <i class="material-icons-outlined search">search</i>
                         <h1 id="title"><span class="typing"></span></h1>
                     </div>
-                    <!-- <div class="navButtons">
-                        <a href="mailto:krwong3@gmail.com" target="_blank" rel="noopener noreferrer"><button class="navBut"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button></a>
-                        <a href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer"><button><img src="./img/navbar/github.png" class="navLogo" id="github"></button></a>
-                        <a href="https://linkedin.com/in/kristina-wong-648199242" target="_blank" rel="noopener noreferrer"><button><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
-                    </div> -->
                     <button class="navButtons"><i class="material-icons-outlined navBut">menu</i></button>
                 </nav>
                 <div class="about-container">
@@ -68,7 +63,7 @@
                                 <p id="about-desc">I'd love to connect with you!</p>
                             </div>
                         </div>
-                        <div class="music-container reveal">
+                        <div class="music-container">
                             <iframe class="musicPlayer" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5JZ7CnR6gTvEMKX4g70Amv?utm_source=generator&theme=0" width="97%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </div>
                     </div>
@@ -148,7 +143,7 @@
                                 <button class="carousel2Btn next2Btn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
                             </div>
                         </div>
-                        <div class="courses-container reveal">
+                        <div class="courses-container">
                             <h1 id="courses-title">Relevant Coursework</h1>
                             <div class="courses-grid">
                                 <div class="grid-container">
@@ -267,10 +262,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="credits">
+                <!-- <div class="credits">
                     <p class="credText">&copy; Created by <a class="credLink" href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer">Kristina Wong</a>. Updated February 2026</p>
                     <p class="credText">Check out the source code <a class="credLink" href="https://github.com/Hinoden/Temp-Portfolio" target="_blank" rel="noopener noreferrer">here</a>!</p>
-                </div>
+                </div> -->
             </section>
         </div>
         <div class="menu-overlay" id="menuOverlay">
@@ -484,11 +479,14 @@ overlay.addEventListener('click', (e) => {
         let index = 0;
 
         // Load JSON
-        fetch("./projects.json")
+        fetch("/projects.json")
             .then(res => res.json())
             .then(data => {
             projects = data;
             renderCarousel();
+            })
+            .catch(error => {
+                console.error("Error loading projects.json:", error);
             });
 
         function renderCarousel() {

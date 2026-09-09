@@ -27,15 +27,6 @@
         "github": "https://github.com/Hinoden/World-Journal-Project"
     },
     {
-        "id": "Netflix-Clone",
-        "name": "Netflix Clone",
-        "company": "Personal Project",
-        "image": "./img/projects/netflix-app.png",
-        "description": "The Netflix Clone is a web application that mimics the functionality and design of Netflix. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>MongoDB</span>, and the <span class='highlightText'>TMDB API</span>, it allows users to browse and search for movies and TV shows, view details about each title, and watch trailers.",
-        "link": "https://netflix-clone-wgwy.onrender.com/",
-        "github": "https://github.com/Hinoden/Netflix-Clone"
-    },
-    {
         "id": "Hinodle",
         "name": "Hinodle",
         "company": "Personal Project",
