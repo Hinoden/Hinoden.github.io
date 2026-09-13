@@ -143,7 +143,7 @@
                                 <button class="carousel2Btn next2Btn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
                             </div>
                         </div>
-                        <div class="courses-container">
+                        <div class="courses-container reveal">
                             <h1 id="courses-title">Relevant Coursework</h1>
                             <div class="courses-grid">
                                 <div class="grid-container">
@@ -290,20 +290,36 @@
                     <p id="spotify-playlist-artist"></p>
                 </div>
 
-                <button class="spotify-playlist-add">
-                    <i class="material-icons-outlined">add_circle_outline</i>
-                </button>
+                <div class="spotify-playlist-add">
+                    <i class="material-icons-outlined grey">add_circle_outline</i>
+                </div>
             </div>
             <div class="spotify-player-mid">
                 <div class="spotify-player-top">
-
+                    <i class="material-icons grey">shuffle</i>
+                    <i id="spotify-prev" class="material-icons grey">skip_previous</i>
+                    <i id="spotify-play"class="material-icons playlist-bot">play_arrow</i>
+                    <i id="spotify-next" class="material-icons grey">skip_next</i>
+                    <i class="material-icons grey">repeat</i>
                 </div>
                 <div class="spotify-player-bottom">
-
+                    <span id="song-start-time">0:50</span>
+                    <div class="spotify-progress-bar">
+                        <div class="spotify-progress"></div>
+                    </div>
+                    <span id="song-end-time">3:23</span>
                 </div>
             </div>
             <div class="spotify-player-right">
-
+                <i class="material-icons-outlined icon-right grey">mic_external_on</i>
+                <i class="material-icons-outlined icon-right grey">reorder</i>
+                <i class="material-icons-outlined icon-right grey">speaker</i>
+                <i class="material-icons-outlined icon-right grey">volume_up</i>
+                <div class="spotify-volume-bar">
+                    <div class="spotify-volume-progress"></div>
+                </div>
+                <i class="material-icons icon-right grey">picture_in_picture_alt</i>
+                <i class="material-icons icon-right grey">fullscreen</i>
             </div>
         </div>
     </body>
@@ -421,24 +437,24 @@
 
         observer.observe(document.querySelector(".about"));
 
-const menuBtn = document.querySelector('.navButtons');
-const overlay = document.getElementById('menuOverlay');
-const closeBtn = document.getElementById('closeMenu');
+    const menuBtn = document.querySelector('.navButtons');
+    const overlay = document.getElementById('menuOverlay');
+    const closeBtn = document.getElementById('closeMenu');
 
-menuBtn.addEventListener('click', () => {
-    overlay.classList.add('active');
-});
+    menuBtn.addEventListener('click', () => {
+        overlay.classList.add('active');
+    });
 
-closeBtn.addEventListener('click', () => {
-    overlay.classList.remove('active');
-});
-
-// Optional: click outside to close
-overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
+    closeBtn.addEventListener('click', () => {
         overlay.classList.remove('active');
-    }
-});
+    });
+
+    // Optional: click outside to close
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('active');
+        }
+    });
 
         // SYNC HEIGHTS
         const left = document.querySelector('.left-container');
@@ -507,12 +523,65 @@ overlay.addEventListener('click', (e) => {
         fetch("/projects.json")
             .then(res => res.json())
             .then(data => {
-            projects = data;
-            renderCarousel();
+                projects = data;
+                renderCarousel();
+                updateProjectPlayer();
             })
             .catch(error => {
                 console.error("Error loading projects.json:", error);
             });
+
+        // MUSIC PLAYER
+        let currentProjectIndex = 0;
+
+        function updateProjectPlayer() {
+            const project = projects[currentProjectIndex];
+
+            document.getElementById("spotify-player-img").src = project.image;
+            document.getElementById("spotify-player-img").alt = project.name;
+
+            document.getElementById("spotify-playlist-song").textContent = project.name;
+            document.getElementById("spotify-playlist-artist").textContent = project.company;
+        }
+
+        function selectProject(index) {
+            currentProjectIndex = index;
+            const project = projects[currentProjectIndex];
+            updateProjectPlayer();
+
+            if (!projectDetail.classList.contains("hidden")) {
+                showProjectDetail(project);
+            }
+        }
+
+        document.getElementById("spotify-next").addEventListener("click", () => {
+            if (currentProjectIndex < projects.length - 1) {
+                selectProject(currentProjectIndex + 1);
+            } else {
+                selectProject(0);
+            }
+        });
+
+        document.getElementById("spotify-play").addEventListener("click", () => {
+            const playButton = document.getElementById("spotify-play");
+
+            if (playButton.textContent === "play_arrow"){
+                showProjectDetail(projects[currentProjectIndex]);
+                playButton.textContent = "pause";
+            } else {
+                projectDetail.classList.add("hidden");
+                carouselContainer.classList.remove("hidden");
+                playButton.textContent = "play_arrow";
+            }
+        });
+
+        document.getElementById("spotify-prev").addEventListener("click", () => {
+            if (currentProjectIndex > 0) {
+                selectProject(currentProjectIndex - 1);
+            } else {
+                selectProject(projects.length - 1);
+            }
+        })
 
         function renderCarousel() {
             track.innerHTML = "";
@@ -534,9 +603,12 @@ overlay.addEventListener('click', (e) => {
             track.querySelectorAll(".img-wrapper").forEach(btn => {
                 btn.addEventListener("click", () => {
                     const projectId = btn.dataset.id;
-                    const project = projects.find(p => p.id === projectId);
+                    currentProjectIndex = projects.findIndex(p => p.id === projectId);
+                    const project = projects[currentProjectIndex];
                     showProjectDetail(project);
-                    updateProjectPlayer(project);
+                    updateProjectPlayer();
+
+                    document.getElementById("spotify-play").textContent = "pause";
                 });
             });
         }
@@ -570,6 +642,8 @@ overlay.addEventListener('click', (e) => {
         backBtn.addEventListener("click", () => {
             projectDetail.classList.add("hidden");
             carouselContainer.classList.remove("hidden");
+
+            document.getElementById("spotify-play").textContent = "play_arrow";
         });
 
         // Simple scrolling
@@ -583,12 +657,12 @@ overlay.addEventListener('click', (e) => {
 
         GitHubCalendar(".calendar", "Hinoden", { responsive: true, global_stats: false });
 
-        // BOTTOM PLAYER
-        function updateProjectPlayer(project){
-
+        // ANIMATIONS
+        if (window.innerWidth <= 768) {
+            document.querySelector(".courses-container").classList.add("reveal");
+            document.querySelector(".calendar").classList.add("reveal");
         }
 
-        // ANIMATIONS
         const reveals = document.querySelectorAll('.reveal');
 
         const observer1 = new IntersectionObserver((entries) => {
