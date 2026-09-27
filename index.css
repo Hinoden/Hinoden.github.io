@@ -129,6 +129,10 @@ body, html{
     }
 }
 
+.white {
+    color: white;
+}
+
 button{
     padding: 0;
     border: none;
@@ -170,6 +174,11 @@ button{
     border-radius: 100px;
     color: white;
     padding: 5px;
+}
+
+.introBut:hover {
+    background-color: white;
+    color: rgb(34, 86, 255);
 }
 
 #intro, #duction{
@@ -446,7 +455,564 @@ button{
     border-radius: 10px;
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
+    
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
 }
+
+#profile-playing {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: rgb(43, 43, 43);
+}
+
+.profile-video-wrapper, .mobile-video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1000/1370;
+}
+
+.video-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(43, 43, 43);
+    z-index: 10;
+}
+
+.video-loading.hidden {
+    display: none;
+}
+
+.loading-spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #555;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#profile-video, #mobile-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* height: 490px;
+    object-fit: cover;
+    display: block; */
+}
+
+#mobile-video {
+    transition: opacity 0.2s ease;
+}
+
+.profile-video-gradient, .mobile-video-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    /* width: 100%;
+    height: 490px; */
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0.2) 60%,
+        rgba(0, 0, 0, 0.7) 80%,
+        rgb(43, 43, 43) 100%
+    );
+}
+
+.profile-video-gradient:hover, .mobile-video-gradient:hover {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.05) 30%,
+        rgba(0, 0, 0, 0.05) 60%,
+        rgba(0, 0, 0, 0.5) 80%,
+        rgb(43, 43, 43) 100%
+    );
+}
+
+.profile-playing-top {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    top: 7px;
+    left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.mobile-playing-top {
+    position: absolute;
+    width: 100%;
+
+    top: 20px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 2;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.mobile-playing-top p{
+    padding: 0;
+    margin: 0;
+}
+
+.profile-playing-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: absolute;
+    z-index: 2;
+    bottom: 30px;
+    left: 10px;
+    right: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mobile-playing-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 10px;
+    gap: 20px;
+
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mobile-playing-bottom-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#mobile-playing-project-img {
+    width: 12vw;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+}
+
+.profile-playing-project-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobile-playing-project-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100vw;
+    padding: 0px 10px;
+}
+
+#mobile-playing-title {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 4vw !important;
+    padding: 0;
+    margin: 0;
+}
+
+#mobile-playing-company {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(183, 183, 183);
+    font-size: 3.5vw !important;
+    padding: 0;
+    margin: 0;
+}
+
+#playing-title, #playing-company {
+    margin: 0;
+    padding: 0;
+}
+
+#playing-title {
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: white;
+}
+
+#playing-company {
+    font-size: 1vw;
+    color: rgb(116, 116, 116);
+}
+
+.profile-playing-icons, .mobile-playing-icons {
+    display: flex;
+    align-items: flex-end;
+}
+
+.profile-playing-icons i, .mobile-playing-icons i {
+    color: white;
+}
+
+.mobile-playing-bottom-mid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mobile-progress-bar {
+    width: 100%;
+    height: 4px;
+    flex-shrink: 0;
+    background-color: grey;
+    border-radius: 5px;
+}
+
+.mobile-progress {
+    width: 30%;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.mobile-time-stamps {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: gray;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5vw;
+    margin-top: 4px;
+}
+
+.mobile-playing-bottom-bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.mobile-playing {
+    color: white;
+    font-size: 7vw !important;
+}
+
+.mobile-playing-play {
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 7vw !important;
+    transition: transform 0.2s ease;
+}
+
+.mobile-playing-play:hover {
+    transform: scale(1.1);
+}
+
+#mobile-prev:hover, #mobile-skip:hover {
+    color: rgb(34, 86, 255);
+}
+
+.profile-playing-carousel, .mobile-playing-carousel {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+.profile-playing-carousel-title, .mobile-playing-carousel-title {
+    text-align: left;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-playing-carousel-title {
+    font-size: 3vw;
+}
+
+.carousel3-container, .mobile-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0px 0px 0px;
+}
+
+.carousel3-track, .mobile-carousel-track {
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    padding-inline: 0;
+}
+
+.carousel3-item, .mobile-carousel3-item {
+    width: auto;
+    flex-shrink: 0;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 10px !important;
+    border-radius: 10px;
+}
+
+.carousel3-item:hover, .mobile-carousel3-item:hover {
+    cursor: pointer;
+    background-color: rgb(62, 62, 62);
+}
+
+.carousel3-img-wrapper, .mobile-carousel3-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.carousel3-project-img, .mobile-carousel3-project-img {
+    width: auto;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.carousel3-project-name {
+    font-size: 1vw;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+
+.mobile-carousel3-project-name {
+    font-size: 2.5vw !important;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin: 5px 0;
+    padding: 0;
+}
+
+.carousel3-project-company {
+    display: flex;
+    align-items: center;
+    color: rgb(155, 155, 155);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    font-size: 0.9vw;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-carousel3-project-company {
+    display: flex;
+    align-items: center;
+    color: rgb(155, 155, 155);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    font-size: 2vw !important;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel3-companyIcon {
+    font-size: 1.2vw !important;
+    color: rgb(43, 43, 43);
+    background-color: rgb(155, 155, 155,);
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+.carousel3-aboutBut, .mobile-carousel3-aboutBut {
+    color: rgb(134, 134, 134);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* start lower */
+    
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.carousel3-img-wrapper:hover .carousel3-aboutBut, .mobile-carousel3-img-wrapper:hover .mobile-carousel3-aboutBut{
+    opacity: 1;
+}
+
+.carousel3Btn, .mobileCarouselBtn {
+    position: absolute;
+    background-color: rgb(25, 20, 20);
+    color: rgb(155, 155, 155);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.carousel3Btn.next3Btn, .mobileCarouselBtn.mobileNextBtn {
+    right: 15px;
+    z-index: 100;
+}
+
+.carousel3Btn.prev3Btn, .mobileCarouselBtn.mobilePrevBtn {
+    left: 0px;
+    z-index: 100;
+}
+
+.carousel3-container:hover .carousel3Btn.next3Btn, .mobile-carousel-container .mobileCarouselBtn.mobileNextBtn {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.carousel3-container:hover .carousel3Btn.prev3Btn, .mobile-carousel-container:hover .mobileCarouselBtn.mobilePrevBtn {
+    opacity: 1;
+    transform: translate(50%, 0);
+}
+
+.profile-playing-credits, .profile-playing-features, .profile-playing-technologies, .mobile-playing-credits, .mobile-playing-about, .mobile-playing-features, .mobile-playing-technologies, .mobile-playing-links {
+    background-color: rgb(51, 51, 51);
+    padding: 3px 10px 10px 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.profile-playing-credits-title, .profile-playing-features-title, .profile-playing-technologies-title, .mobile-playing-credits-title, .mobile-playing-about-title, .mobile-playing-features-title, .mobile-playing-technologies-title, .mobile-playing-links-title {
+    color: white;
+    font-weight: bold;
+}
+
+.profile-playing-credits-list, .profile-playing-features-list, .profile-playing-technologies-list, .mobile-playing-credits-list, .mobile-playing-about-list, .mobile-playing-features-list, .mobile-playing-technologies-list, .mobile-playing-links-list {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#mobile-playing-about-list {
+    color: white;
+}
+
+.profile-playing-credits-person, .profile-playing-features-person, .profile-playing-technologies-person, .mobile-playing-credits-person, .mobile-playing-features-person, .mobile-playing-technologies-person {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.profile-playing-credits-person:hover, .profile-playing-features-person:hover, .profile-playing-technologies-person:hover, .mobile-playing-credits-person:hover, .mobile-playing-features-person:hover, .mobile-playing-technologies-person:hover {
+    background-color: rgb(62, 62, 62);
+}
+
+.profile-playing-credits-name, .profile-playing-credits-role, .profile-playing-features-name, .profile-playing-technologies-category, .profile-playing-technologies-name, .mobile-playing-credits-name, .mobile-playing-credits-role, .mobile-playing-features-name, .mobile-playing-technologies-category, .mobile-playing-technologies-name {
+    margin: 0;
+    padding: 0;
+}
+
+.profile-playing-credits-name, .profile-playing-features-name, .profile-playing-technologies-category {
+    font-size: 1vw;
+    color: white;
+}
+
+.profile-playing-credits-role, .profile-playing-technologies-name {
+    font-size: 0.9vw;
+    color: rgb(116, 116, 116);
+}
+
+.mobile-playing-credits-name, .mobile-playing-features-name, .mobile-playing-technologies-category {
+    font-size: 2.9vw !important;
+    color: white;
+}
+
+.mobile-playing-credits-role, .mobile-playing-technologies-name {
+    font-size: 2.5vw !important;
+    color: rgb(116, 116, 116);
+}
+
+#mobile-playing-links-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mobile-playing-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.mobile-playing-link span {
+    color: white;
+    font-size: 2.9vw;
+}
+
+.mobile-playing-link a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-size: 2.8vw;
+    
+    border: 1px solid white;
+    padding: 4px 10px;
+    border-radius: 15px;
+}
+
+.mobile-playing-link a:hover {
+    color: rgb(34, 86, 255);
+    border: 1px solid rgb(34, 86, 255);
+}
+
+/* RIGHT CONTAINER */
 
 .right-container {
     flex: 2;
@@ -966,6 +1532,7 @@ button{
 
 #course-school {
     font-size: 0.9vw;
+    color: rgb(176, 176, 176);
 }
 
 /* CALENDAR */
@@ -1205,6 +1772,16 @@ text.ContributionCalendar-label {
 
     z-index: 1000;
     background-color: rgb(25, 20, 20);
+
+    /* When HIDDEN */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.spotify-player.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .spotify-player-left {
@@ -1470,10 +2047,6 @@ text.ContributionCalendar-label {
         overflow: hidden;
     }
 
-    .spotify-player-left {
-        
-    }
-
     .spotify-playlist-title {
         font-size: 1.5vw;
     }
@@ -1489,6 +2062,57 @@ text.ContributionCalendar-label {
     .spotify-player-right {
         display: hidden;
     }
+
+    /* Profile playing component */
+    #profile-video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #mobile-playing-back-btn {
+        color: white;
+    }
+
+    #playing-title, #mobile-playing-title {
+        font-size: 1.7vw;
+    }
+
+    #playing-company, #mobile-playing-company {
+        font-size: 1.4vw;
+    }
+
+    .profile-playing-carousel-title {
+        font-size: 1.7vw;
+    }
+
+    .carousel3-project-name, .mobile-carousel3-project-name {
+        font-size: 1.5vw;
+    }
+
+    .carousel3-project-company, .mobile-carousel3-project-company {
+        font-size: 1.3vw;
+    }
+
+    .carousel3-project-company i {
+        font-size: 1.5vw;
+    }
+
+    .mobile-carousel3-project-company i {
+        font-size: 3vw;
+    }
+
+    .profile-playing-credits-title, .profile-playing-features-title, .profile-playing-technologies-title {
+        font-size: 1.7vw;
+    }
+
+    .profile-playing-credits-name, .profile-playing-features-name, .profile-playing-technologies-category {
+        font-size: 1.4vw;
+    }
+
+    .profile-playing-credits-role, .profile-playing-technologies-name {
+        font-size: 1.3vw;
+    }
 }
 
 @media screen and (max-width: 600px) {      /* Small Size --> Will be a singular column */
@@ -1502,6 +2126,10 @@ text.ContributionCalendar-label {
 
     .section {
         scroll-snap-align: start;
+    }
+
+    .container {
+        margin-bottom: 100px;
     }
 
     /* INTRO SECTION */
@@ -1674,11 +2302,29 @@ text.ContributionCalendar-label {
         font-size: 3.5vw !important;
     }
 
+    .grid-box p {
+        font-size: 2.4vw !important;
+    }
+
     #courses-title {
         font-size: 3.5vw;
     }
 
+    #course-name {
+        font-size: 2.5vw;
+    }
+
     #course-school {
-        font-size: 2.9vw;
+        font-size: 2.2vw;
+    }
+
+    #mobile-playing-profile {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99999;
+        background-color: rgb(43, 43, 43);
+        overflow-y: auto;
     }
 }

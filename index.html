@@ -32,9 +32,9 @@
                     <h1 id="intro">Hi, I'm <span class="highlight">Kristina</span>.</h1>
                     <h1 id="duction">I'm a <span class="highlight auto-type"></span></h1>
                     <div class="icon-row">
-                        <button id="fastRewindButton"><i class="material-icons-outlined introBut">fast_rewind</i></button>
-                        <button id="playButton"><i class="material-icons-outlined introBut">play_arrow</i></button>
-                        <button id="fastForwardButton"><i class="material-icons-outlined introBut">fast_forward</i></button>
+                        <button id="fastRewindButton"><i class="material-icons introBut">fast_rewind</i></button>
+                        <button id="playButton"><i class="material-icons introBut">play_arrow</i></button>
+                        <button id="fastForwardButton"><i class="material-icons introBut">fast_forward</i></button>
                     </div>
                 </div>
             </section>
@@ -51,16 +51,73 @@
                 <div class="about-container">
                     <div class="left-container">
                         <div class="profile-container reveal">
-                            <div class="img-border">
-                                <img src="./img/profile-pic.jpg" id="prof-pic"/>
+                            <div id="profile-normal">
+                                <div class="img-border">
+                                    <img src="./img/profile-pic.jpg" id="prof-pic"/>
+                                </div>
+                                <div class="about-text">
+                                    <h1 id="about-title">Kristina Wong</h1>
+                                    <h2 id="about-sub">Web Developer | Engineer | Designer</h2>
+                                    <p id="about-desc">I'm an aspiring software engineer passionate about full-stack web development, where I merge creativity with puzzle-solving to produce user-friendly applications.</p>
+                                    <p id="about-desc">I strive to build software that simplifies life, enhances accessibility, and brings joy, while constantly seeking new projects to expand my skills.</p>
+                                    <p id="about-desc">Outside of coding, I enjoy reading, crocheting, and playing piano and clarinet, hobbies that inspire the creativity in my work.</p>
+                                    <p id="about-desc">I'd love to connect with you!</p>
+                                </div>
                             </div>
-                            <div class="about-text">
-                                <h1 id="about-title">Kristina Wong</h1>
-                                <h2 id="about-sub">Web Developer | Engineer | Designer</h2>
-                                <p id="about-desc">I'm an aspiring software engineer passionate about full-stack web development, where I merge creativity with puzzle-solving to produce user-friendly applications.</p>
-                                <p id="about-desc">I strive to build software that simplifies life, enhances accessibility, and brings joy, while constantly seeking new projects to expand my skills.</p>
-                                <p id="about-desc">Outside of coding, I enjoy reading, crocheting, and playing piano and clarinet, hobbies that inspire the creativity in my work.</p>
-                                <p id="about-desc">I'd love to connect with you!</p>
+                            <!-- VIDEO SEGMENT -->
+                            <div id="profile-playing" class="hidden">
+                                <div class="profile-video-wrapper">
+                                    <video id="profile-video" autoplay muted loop playsinline>
+                                        <source id="profile-video-source" src="" type="video/mp4">
+                                    </video>
+
+                                    <div class="profile-video-gradient"></div>
+                                    <div class="profile-playing-top">
+                                        <p class="profile-playing-title">Featured Projects</p>
+                                    </div>
+                                    <div class="profile-playing-bottom">
+                                        <div class="profile-playing-project-title">
+                                            <p id="playing-title"></p>
+                                            <p id="playing-company"></p>
+                                        </div>
+                                        <div class="profile-playing-icons">
+                                            <button><i class="material-icons-outlined">add_circle_outline</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CAROUSEL -->
+                                <div class="profile-playing-carousel">
+                                    <p class="profile-playing-carousel-title">More Projects</p>
+                                    <div class="carousel3-container">
+                                        <button class="carousel3Btn prev3Btn"><i class="material-icons-sharp nextPrev">arrow_back_ios</i></button>
+                                        <div class="carousel3-track">
+                                            <!-- Carousel items will be injected here -->
+                                        </div>
+                                        <button class="carousel3Btn next3Btn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
+                                    </div>
+                                </div>
+
+                                <div class="profile-playing-credits">
+                                    <p class="profile-playing-credits-title">Credits</p>
+                                    <div id="profile-playing-credits-list">
+                                        <!-- Credits displayed here -->
+                                    </div>
+                                </div>
+
+                                <div class="profile-playing-features">
+                                    <p class="profile-playing-features-title">Features I Worked On</p>
+                                    <div id="profile-playing-features-list">
+                                        <!-- Features displayed here -->
+                                    </div>
+                                </div>
+
+                                <div class="profile-playing-technologies">
+                                    <p class="profile-playing-technologies-title">Technologies</p>
+                                    <div id="profile-playing-technologies-list">
+                                        <!-- Technologes displayed here -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="music-container">
@@ -154,7 +211,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Software Engineering</p>
+                                        <p id="course-name">Software Engineering</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -166,7 +223,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Full Stack Web Development</p>
+                                        <p id="course-name">Full Stack Web Development</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -178,7 +235,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Database Systems Implementation</p>
+                                        <p id="course-name">Database Systems Implementation</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -190,7 +247,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Cryptography</p>
+                                        <p id="course-name">Cryptography</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -202,7 +259,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Algorithm Design and Analysis</p>
+                                        <p id="course-name">Algorithm Design and Analysis</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -214,7 +271,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Mobile Computing</p>
+                                        <p id="course-name">Mobile Computing</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -226,7 +283,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Data Structures</p>
+                                        <p id="course-name">Data Structures</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -238,7 +295,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Object Oriented Programming</p>
+                                        <p id="course-name">Object Oriented Programming</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -250,7 +307,7 @@
                                         </div>
                                     </div>
                                     <div class="grid-right">
-                                        <p>Discrete Mathematics</p>
+                                        <p id="course-name">Discrete Mathematics</p>
                                         <p id="course-school">UC Merced</p>
                                     </div>
                                 </div>
@@ -276,7 +333,7 @@
                 <div class="menu-links">
                     <a href="mailto:krwong3@gmail.com" target="_blank" rel="noopener noreferrer"><button class="menu-but email"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button></a>
                     <a href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer"><button class="menu-but github"><img src="./img/navbar/github.png" class="navLogo" id="github"></button></a>
-                    <a href="https://linkedin.com/in/kristina-wong-648199242" target="_blank" rel="noopener noreferrer"><button class="menu-but linkedin"><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
+                    <a href="https://www.linkedin.com/in/kristina-wong23" target="_blank" rel="noopener noreferrer"><button class="menu-but linkedin"><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
                     <!-- <a href="./img/Full Stack Resume.pdf" target="_blank" rel="noopener noreferrer"><button class="menu-but resume"><i class="material-icons-outlined resumeBut">assignment</i></button></a> -->
                 </div>
             </div>
@@ -321,6 +378,100 @@
                 <i class="material-icons icon-right grey">picture_in_picture_alt</i>
                 <i class="material-icons icon-right grey">fullscreen</i>
             </div>
+
+            <!-- MOBILE VIEW -->
+             <div id="mobile-playing-profile" class="hidden">
+                <div class="mobile-video-wrapper">
+                    <div id="video-loading" class="video-loading hidden">
+                        <div class="loading-spinner"></div>
+                    </div>
+                    <video id="mobile-video" autoplay muted loop playsinline>
+                        <source id="mobile-video-source" src="" type="video/mp4">
+                    </video>
+
+                    <div class="mobile-video-gradient"></div>
+                    <div class="mobile-playing-top">
+                        <button id="mobile-playing-back-btn">
+                            <i class="material-icons">keyboard_arrow_down</i>
+                        </button>
+                        <p class="mobile-playing-title">Featured Projects</p>
+                        <i class="material-icons">more_horiz</i>
+                    </div>
+                    <div class="mobile-playing-bottom">
+                        <div class="mobile-playing-bottom-top">
+                            <img id="mobile-playing-project-img" />
+                            <div class="mobile-playing-project-title">
+                                <p id="mobile-playing-title"></p>
+                                <p id="mobile-playing-company"></p>
+                            </div>
+                            <i class="material-icons-outlined white">add_circle_outline</i>
+                        </div>
+                        <div class="mobile-playing-bottom-mid">
+                            <div class="mobile-progress-bar">
+                                <div class="mobile-progress"></div>
+                            </div>
+                            <div class="mobile-time-stamps">
+                                <span id="mobile-song-start-time">0:50</span>
+                                <span id="mobile-end-time">3:23</span>
+                            </div>
+                        </div>
+                        <div class="mobile-playing-bottom-bot">
+                            <i class="material-icons mobile-playing">shuffle</i>
+                            <i id="mobile-prev" class="material-icons mobile-playing">skip_previous</i>
+                            <i id="mobile-pause" class="material-icons mobile-playing-play">pause</i>
+                            <i id="mobile-skip" class="material-icons mobile-playing">skip_next</i>
+                            <i class="material-icons mobile-playing">repeat</i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAROUSEL -->
+                <div class="mobile-playing-carousel">
+                    <p class="mobile-playing-carousel-title">More Projects</p>
+                    <div class="mobile-carousel-container">
+                        <button class="mobileCarouselBtn mobilePrevBtn"><i class="material-icons-sharp nextPrev">arrow_back_ios</i></button>
+                        <div class="mobile-carousel-track">
+                            <!-- Carousel items will be injected here -->
+                        </div>
+                        <button class="mobileCarouselBtn mobileNextBtn"><i class="material-icons-sharp nextPrev">arrow_forward_ios</i></button>
+                    </div>
+                </div>
+
+                <div class="mobile-playing-about">
+                    <p class="mobile-playing-about-title">About the Project</p>
+                    <div id="mobile-playing-about-list">
+                        <!-- About will be displayed here -->
+                    </div>
+                </div>
+
+                <div class="mobile-playing-links">
+                    <p class="mobile-playing-links-title">Links</p>
+                    <div id="mobile-playing-links-list">
+                        <!-- Links displayed here -->
+                    </div>
+                </div>
+
+                <div class="mobile-playing-credits">
+                    <p class="mobile-playing-credits-title">Credits</p>
+                    <div id="mobile-playing-credits-list">
+                        <!-- Credits displayed here -->
+                    </div>
+                </div>
+
+                <div class="mobile-playing-features">
+                    <p class="mobile-playing-features-title">Features I Worked On</p>
+                    <div id="mobile-playing-features-list">
+                        <!-- Features displayed here -->
+                    </div>
+                </div>
+
+                <div class="mobile-playing-technologies">
+                    <p class="mobile-playing-technologies-title">Technologies</p>
+                    <div id="mobile-playing-technologies-list">
+                        <!-- Technologes displayed here -->
+                    </div>
+                </div>
+             </div>
         </div>
     </body>
 
@@ -400,15 +551,20 @@
         document.addEventListener("DOMContentLoaded", () => {
         const intro = document.querySelector(".intro");
         const navbar = document.getElementById("mainNavbar");
+        const spotifyPlayer = document.querySelector(".spotify-player");
 
         const navObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Intro visible → hide navbar
                 navbar.classList.remove("visible");
+                // Intro visible --> hide Spotify player
+                spotifyPlayer.classList.remove("visible");
             } else {
                 // Intro passed → show navbar
                 navbar.classList.add("visible");
+                // Intro passed --> show Spotify player
+                spotifyPlayer.classList.add("visible");
             }
             });
         }, { threshold: 0.2 });
@@ -417,25 +573,26 @@
         });
 
 
-        // SECTION 2 - ABOUT
-        let aboutTyped = null; // store Typed instance
-        let hasTypedRun = false; // make sure it only runs once
+    // SECTION 2 - ABOUT
+    let isPlaying = false;  // keeps track of when playing component is open
+    let aboutTyped = null; // store Typed instance
+    let hasTypedRun = false; // make sure it only runs once
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasTypedRun) {
-                    hasTypedRun = true; // only run once
-                    aboutTyped = new Typed(".typing", {
-                        strings: ["Kristina Wong"],
-                        typeSpeed: 100,
-                        backSpeed: 100,
-                        loop: false
-                    });
-                }
-            });
-        }, { threshold: 0.2 }); // trigger when 50% of section is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasTypedRun) {
+                hasTypedRun = true; // only run once
+                aboutTyped = new Typed(".typing", {
+                    strings: ["Kristina Wong"],
+                    typeSpeed: 100,
+                    backSpeed: 100,
+                    loop: false
+                });
+            }
+        });
+    }, { threshold: 0.2 }); // trigger when 50% of section is visible
 
-        observer.observe(document.querySelector(".about"));
+    observer.observe(document.querySelector(".about"));
 
     const menuBtn = document.querySelector('.navButtons');
     const overlay = document.getElementById('menuOverlay');
@@ -456,225 +613,598 @@
         }
     });
 
-        // SYNC HEIGHTS
-        const left = document.querySelector('.left-container');
-        const right = document.querySelector('.right-container');
+    // SYNC HEIGHTS
+    const left = document.querySelector('.left-container');
+    const right = document.querySelector('.right-container');
 
-        if (left && right) {
-            const observer = new ResizeObserver(entries => {
-                for (let entry of entries) {
-                    right.style.height = `${entry.contentRect.height}px`;
-                }
-            });
-
-            observer.observe(left);
-        }
-
-        // CAROUSEL
-        const track = document.querySelector('.carousel-track');
-        const leftBtn = document.querySelector('.carouselBtn.prevBtn');
-        const rightBtn = document.querySelector('.carouselBtn.nextBtn');
-
-        const scrollAmount = 600;
-
-        leftBtn.addEventListener('click', () => {
-            track.scrollBy({left: -scrollAmount, behavior: 'smooth'});
+    if (left && right) {
+        const observer = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                right.style.height = `${entry.contentRect.height}px`;
+            }
         });
 
-        rightBtn.addEventListener('click', () => {
-            track.scrollBy({left: scrollAmount, behavior: 'smooth'});
-        });
+        observer.observe(left);
+    }
 
-        // CAROUSEL 2
-        const track2 = document.querySelector('.carousel2-track');
-        const left2Btn = document.querySelector('.carousel2Btn.prev2Btn');
-        const right2Btn = document.querySelector('.carousel2Btn.next2Btn');
+    // CAROUSEL - PROJECTS
+    const track = document.querySelector('.carousel-track');
+    const leftBtn = document.querySelector('.carouselBtn.prevBtn');
+    const rightBtn = document.querySelector('.carouselBtn.nextBtn');
 
-        const scroll2Amount = 600;
+    const scrollAmount = 600;
 
-        left2Btn.addEventListener('click', () => {
-            track2.scrollBy({left: -scroll2Amount, behavior: 'smooth'});
-        });
+    leftBtn.addEventListener('click', () => {
+        track.scrollBy({left: -scrollAmount, behavior: 'smooth'});
+    });
 
-        right2Btn.addEventListener('click', () => {
-            track2.scrollBy({left: scroll2Amount, behavior: 'smooth'});
-        });
+    rightBtn.addEventListener('click', () => {
+        track.scrollBy({left: scrollAmount, behavior: 'smooth'});
+    });
+
+    // CAROUSEL 2 - SKILLS
+    const track2 = document.querySelector('.carousel2-track');
+    const left2Btn = document.querySelector('.carousel2Btn.prev2Btn');
+    const right2Btn = document.querySelector('.carousel2Btn.next2Btn');
+
+    const scroll2Amount = 600;
+
+    left2Btn.addEventListener('click', () => {
+        track2.scrollBy({left: -scroll2Amount, behavior: 'smooth'});
+    });
+
+    right2Btn.addEventListener('click', () => {
+        track2.scrollBy({left: scroll2Amount, behavior: 'smooth'});
+    });
+
+    // CAROUSEL 3 - PROJECT PLAYLIST
+    const track3 = document.querySelector('.carousel3-track');
+    const left3Btn = document.querySelector('.carousel3Btn.prev3Btn');
+    const right3Btn = document.querySelector('.carousel3Btn.next3Btn');
+
+    const scroll3Amount = 600;
+
+    left3Btn.addEventListener('click', () => {
+        track3.scrollBy({left: -scroll3Amount, behavior: 'smooth'});
+    });
+
+    right3Btn.addEventListener('click', () => {
+        track3.scrollBy({left: scroll3Amount, behavior: 'smooth'});
+    });
+
+    // MOBILE CAROUSEL
+    const mobileTrack = document.querySelector('.mobile-carousel-track');
+    const mobileLeftBtn = document.querySelector('.mobileCarouselBtn.mobilePrevBtn');
+    const mobileRightBtn = document.querySelector('.mobileCarouselBtn.mobileNextBtn');
+
+    const mobileScrollAmount = 600;
+
+    mobileLeftBtn.addEventListener('click', () => {
+        mobileTrack.scrollBy({left: -mobileScrollAmount, behavior: 'smooth'});
+    });
+
+    mobileRightBtn.addEventListener('click', () => {
+        mobileTrack.scrollBy({left: mobileScrollAmount, behavior: 'smooth'});
+    });
         
-        // Project Detail View
-        document.addEventListener("DOMContentLoaded", () => {
-        const track = document.querySelector(".carousel-track");
-        const prevBtn = document.querySelector(".prevBtn");
-        const nextBtn = document.querySelector(".nextBtn");
-        const carouselContainer = document.querySelector(".carousel-container");
-        const projectDetail = document.querySelector(".project-detail");
-        const detailTitle = document.getElementById("detail-title");
-        const detailImage = document.getElementById("detail-image");
-        const detailCompany = document.getElementById("detail-company");
-        const detailText = document.getElementById("detail-text");
-        const backBtn = document.getElementById("backBtn");
-        const liveBtn = document.getElementById("liveBtn");
-        const repoBtn = document.getElementById("repoBtn");
+    // Project Detail View
+    document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".carousel-track");
+    const prevBtn = document.querySelector(".prevBtn");
+    const nextBtn = document.querySelector(".nextBtn");
+    const carouselContainer = document.querySelector(".carousel-container");
+    const projectDetail = document.querySelector(".project-detail");
+    const detailTitle = document.getElementById("detail-title");
+    const detailImage = document.getElementById("detail-image");
+    const detailCompany = document.getElementById("detail-company");
+    const detailText = document.getElementById("detail-text");
+    const backBtn = document.getElementById("backBtn");
+    const liveBtn = document.getElementById("liveBtn");
+    const repoBtn = document.getElementById("repoBtn");
+    const playingTitle = document.getElementById("playing-title");
+    const playingCompany = document.getElementById("playing-company");
 
+    //mobile
+    const mobilePlayingProjectImage = document.getElementById("mobile-playing-project-img");
+    const mobilePlayingTitle = document.getElementById("mobile-playing-title");
+    const mobilePlayingCompany = document.getElementById("mobile-playing-company");
 
-        let projects = [];
-        let index = 0;
+    let projects = [];
+    let index = 0;
 
-        // Load JSON
-        fetch("/projects.json")
-            .then(res => res.json())
-            .then(data => {
-                projects = data;
-                renderCarousel();
+    // Load JSON
+    fetch("/projects.json")
+        .then(res => res.json())
+        .then(data => {
+            projects = data;
+            renderCarousel();
+            updateProjectPlayer();
+        })
+        .catch(error => {
+            console.error("Error loading projects.json:", error);
+        });
+
+    // MUSIC PLAYER
+    let currentProjectIndex = 0;
+
+    function updateProjectPlayer() {
+        const project = projects[currentProjectIndex];
+
+        document.getElementById("spotify-player-img").src = project.image;
+        document.getElementById("spotify-player-img").alt = project.name;
+
+        document.getElementById("spotify-playlist-song").textContent = project.name;
+        document.getElementById("spotify-playlist-artist").textContent = project.company;
+    }
+
+    function selectProject(index) {
+        currentProjectIndex = index;
+        const project = projects[currentProjectIndex];
+
+        if (!projectDetail.classList.contains("hidden")) {
+            showProjectDetail(project, true);
+        }
+
+        updateProjectPlayer();
+    }
+
+    document.getElementById("spotify-next").addEventListener("click", () => {
+        if (currentProjectIndex < projects.length - 1) {
+            selectProject(currentProjectIndex + 1);
+        } else {
+            selectProject(0);
+        }
+    });
+
+    document.getElementById("mobile-skip").addEventListener("click", () => {
+        if (currentProjectIndex < projects.length - 1) {
+            selectProject(currentProjectIndex + 1);
+        } else {
+            selectProject(0);
+        }
+    });
+
+    document.getElementById("spotify-play").addEventListener("click", () => {
+        const playButton = document.getElementById("spotify-play");
+
+        if (playButton.textContent === "play_arrow"){       //when clicking play button
+            showProjectDetail(projects[currentProjectIndex]);
+            mobilePlayingProfile.scrollTop = 0;
+            right.scrollTop = 0;
+            playButton.textContent = "pause";
+            isPlaying = true;
+        } else {
+            projectDetail.classList.add("hidden");      //when clicking pause button
+            carouselContainer.classList.remove("hidden");
+            playButton.textContent = "play_arrow";
+            updateProfileContainer(false);
+            isPlaying = false;
+        }
+    });
+
+    document.getElementById("spotify-prev").addEventListener("click", () => {
+        if (currentProjectIndex > 0) {
+            selectProject(currentProjectIndex - 1);
+        } else {
+            selectProject(projects.length - 1);
+        }
+    });
+
+    document.getElementById("mobile-prev").addEventListener("click", () => {
+        if (currentProjectIndex > 0) {
+            selectProject(currentProjectIndex - 1);
+        } else {
+            selectProject(projects.length - 1);
+        }
+    })
+
+    const profileNormal = document.getElementById("profile-normal");
+    const profilePlaying = document.getElementById("profile-playing");
+    const mobilePlayingProfile = document.getElementById("mobile-playing-profile");
+    const mobilePlayingBack = document.getElementById("mobile-playing-back-btn");
+    const mobilePlayingPause = document.getElementById("mobile-pause");
+
+    function updateProfileContainer(showPlaying) {
+        if (showPlaying){
+            profileNormal.classList.add("hidden");
+            profilePlaying.classList.remove("hidden");
+            isPlaying = true;
+        } else {
+            profileNormal.classList.remove("hidden");
+            profilePlaying.classList.add("hidden");
+            isPlaying = false;
+        }
+    }
+
+    function renderCarousel() {
+        track.innerHTML = "";
+        projects.forEach(project => {
+        const item = document.createElement("div");
+        item.className = "carousel-item";
+        item.innerHTML = `
+            <button class="img-wrapper AI-Opportunity-Backpack" data-id="${project.id}">
+                <img id="project-img" src="${project.image}" alt="${project.name}">
+                <p class="project-name">${project.name}</p>
+                <p class="project-company"><i class="material-icons">apartment</i> ${project.company}</p>
+                <div class="aboutBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+            </button>
+        `;
+        track.appendChild(item);
+        });
+
+        // Click handler for items
+        track.querySelectorAll(".img-wrapper").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const projectId = btn.dataset.id;
+                currentProjectIndex = projects.findIndex(p => p.id === projectId);
+                const project = projects[currentProjectIndex];
+                showProjectDetail(project);
                 updateProjectPlayer();
-            })
-            .catch(error => {
-                console.error("Error loading projects.json:", error);
+                mobilePlayingProfile.scrollTop = 0;
+
+                isPlaying = true;
+                document.getElementById("spotify-play").textContent = "pause";
+            });
+        });
+    }
+
+    function renderPlayingCarousel(currentProjectId) {
+        track3.innerHTML = "";
+
+        projects
+            .filter(project => project.id !== currentProjectId)
+            .forEach(project => {
+                const item = document.createElement("div");
+                item.className="carousel3-item";
+                item.innerHTML = `
+                    <button class="carousel3-img-wrapper AI-Opportunity-Backpack" data-id="${project.id}">
+                        <img class="carousel3-project-img" src="${project.image}" alt="${project.name}">
+                        <p class="carousel3-project-name">${project.name}</p>
+                        <p class="carousel3-project-company"><i class="material-icons">apartment</i> ${project.company}</p>
+                        <div class="carousel3-aboutBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                    </button>   
+                `;
+                track3.appendChild(item);
             });
 
-        // MUSIC PLAYER
-        let currentProjectIndex = 0;
-
-        function updateProjectPlayer() {
-            const project = projects[currentProjectIndex];
-
-            document.getElementById("spotify-player-img").src = project.image;
-            document.getElementById("spotify-player-img").alt = project.name;
-
-            document.getElementById("spotify-playlist-song").textContent = project.name;
-            document.getElementById("spotify-playlist-artist").textContent = project.company;
-        }
-
-        function selectProject(index) {
-            currentProjectIndex = index;
-            const project = projects[currentProjectIndex];
-            updateProjectPlayer();
-
-            if (!projectDetail.classList.contains("hidden")) {
+        track3.querySelectorAll(".carousel3-img-wrapper").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const projectId = btn.dataset.id;
+                currentProjectIndex = projects.findIndex(p => p.id === projectId);
+                const project = projects[currentProjectIndex];
                 showProjectDetail(project);
-            }
+                updateProjectPlayer();
+                isPlaying = true;
+
+                document.getElementById("spotify-play").textContent = "pause";
+            });
+        });
+    }
+
+    function renderMobilePlayingCarousel(currentProjectId) {
+        mobileTrack.innerHTML = "";
+
+        projects
+            .filter(project => project.id !== currentProjectId)
+            .forEach(project => {
+                const item = document.createElement("div");
+                item.className="mobile-carousel3-item";
+                item.innerHTML = `
+                    <button class="mobile-carousel3-img-wrapper AI-Opportunity-Backpack" data-id="${project.id}">
+                        <img class="mobile-carousel3-project-img" src="${project.image}" alt="${project.name}">
+                        <p class="mobile-carousel3-project-name">${project.name}</p>
+                        <p class="mobile-carousel3-project-company"><i class="material-icons">apartment</i> ${project.company}</p>
+                        <div class="mobile-carousel3-aboutBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
+                    </button>   
+                `;
+                mobileTrack.appendChild(item);
+            });
+
+        mobileTrack.querySelectorAll(".mobile-carousel3-img-wrapper").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const projectId = btn.dataset.id;
+                currentProjectIndex = projects.findIndex(p => p.id === projectId);
+                const project = projects[currentProjectIndex];
+                showProjectDetail(project);
+                updateProjectPlayer();
+                mobilePlayingProfile.scrollTop = 0;
+                isPlaying = true;
+
+                document.getElementById("spotify-play").textContent = "pause";
+            });
+        });
+    }
+
+    //accomodate screen size switches
+    window.addEventListener("resize", () => {
+        if (!isPlaying){
+            return;
+        }
+        
+        if (window.innerWidth <= 600) {
+            //switch to mobile
+            profilePlaying.classList.add("hidden");
+            mobilePlayingProfile.classList.remove("hidden");
+        } else {
+            //switch to desktop
+            profilePlaying.classList.remove("hidden");
+            mobilePlayingProfile.classList.add("hidden");
+        }
+    });
+
+    function showProjectDetail(project, alreadyPlaying = false) {
+        detailTitle.textContent = project.name;
+        detailImage.src = project.image;
+        detailCompany.innerHTML = `<i class="material-icons-outlined companyIconHidden">apartment</i> ${project.company}`;
+        detailText.innerHTML = project.description;
+        playingTitle.textContent = project.name;
+        playingCompany.textContent = project.company;
+
+        mobilePlayingProjectImage.src = project.image;
+        mobilePlayingTitle.textContent = project.name;
+        mobilePlayingCompany.textContent = project.company;
+
+        isPlaying = true;
+
+        //video
+        const video = document.getElementById("profile-video");
+        const videoSource = document.getElementById("profile-video-source");
+
+        //mobile video
+        const mobileVideo = document.getElementById("mobile-video");
+        const mobileVideoSource = document.getElementById("mobile-video-source");
+        const videoLoading = document.getElementById("video-loading");
+
+        if (window.innerWidth <= 600) {
+            videoLoading.classList.remove("hidden");
+            mobileVideo.style.opacity = "0";
+            mobileVideoSource.src = project.video;
+            mobileVideo.load();
+
+            mobileVideo.addEventListener("canplay", () => {
+                mobileVideo.play();
+                mobileVideo.style.opacity = "1";
+                videoLoading.classList.add("hidden");
+            }, { once: true});
+        } else {
+            video.style.opacity = "0";
+            videoSource.src = project.video;
+            video.load();
+            video.addEventListener("canplay", () => {
+                video.play();
+                video.style.opacity = "1";
+            }, { once: true});
         }
 
-        document.getElementById("spotify-next").addEventListener("click", () => {
-            if (currentProjectIndex < projects.length - 1) {
-                selectProject(currentProjectIndex + 1);
-            } else {
-                selectProject(0);
-            }
-        });
+        //mobile links
+        const mobileList = document.getElementById("mobile-playing-links-list");
+        mobileList.innerHTML = "";
 
-        document.getElementById("spotify-play").addEventListener("click", () => {
-            const playButton = document.getElementById("spotify-play");
+        if (project.link && project.link.trim() !== "") {
+            const websiteContainer = document.createElement("div");
+            websiteContainer.className = "mobile-playing-link";
 
-            if (playButton.textContent === "play_arrow"){
-                showProjectDetail(projects[currentProjectIndex]);
-                playButton.textContent = "pause";
-            } else {
-                projectDetail.classList.add("hidden");
-                carouselContainer.classList.remove("hidden");
-                playButton.textContent = "play_arrow";
-            }
-        });
+            websiteContainer.innerHTML = `
+                <span>Website </span>
+                <a href="${project.link}" target="_blank" rel="noopener noreferrer">Visit here</a>
+            `;
 
-        document.getElementById("spotify-prev").addEventListener("click", () => {
-            if (currentProjectIndex > 0) {
-                selectProject(currentProjectIndex - 1);
-            } else {
-                selectProject(projects.length - 1);
-            }
+            mobileList.appendChild(websiteContainer);
+        }
+
+        if (project.github && project.github.trim() !== "") {
+            const githubContainer = document.createElement("div");
+            githubContainer.className = "mobile-playing-link";
+
+            githubContainer.innerHTML = `
+                <span>Github </span>
+                <a href="${project.github}" target="_blank" rel="noopener noreferrer">Visit here</a>
+            `;
+
+            mobileList.appendChild(githubContainer);
+        }
+
+        //credits
+        const creditsList = document.getElementById("profile-playing-credits-list");
+        
+        creditsList.innerHTML = "";
+
+        project.credits.forEach(person => {
+            const credit = document.createElement("div");
+            credit.className = "profile-playing-credits-person";
+
+            credit.innerHTML = `
+                <p class="profile-playing-credits-name">${person.name}</p>
+                <p class="profile-playing-credits-role">${person.role}</p>
+            `;
+
+            creditsList.appendChild(credit);
         })
 
-        function renderCarousel() {
-            track.innerHTML = "";
-            projects.forEach(project => {
-            const item = document.createElement("div");
-            item.className = "carousel-item";
-            item.innerHTML = `
-                <button class="img-wrapper AI-Opportunity-Backpack" data-id="${project.id}">
-                    <img id="project-img" src="${project.image}" alt="${project.name}">
-                    <p class="project-name">${project.name}</p>
-                    <p class="project-company"><i class="material-icons">apartment</i> ${project.company}</p>
-                    <div class="aboutBut"><i class="material-icons-sharp projectBut">play_arrow</i></div>
-                </button>
+        //mobile credits
+        const mobileCreditsList = document.getElementById("mobile-playing-credits-list");
+
+        mobileCreditsList.innerHTML = "";
+
+        project.credits.forEach(person => {
+            const mobileCredit = document.createElement("div");
+            mobileCredit.className = "mobile-playing-credits-person";
+
+            mobileCredit.innerHTML = `
+                <p class="mobile-playing-credits-name">${person.name}</p>
+                <p class="mobile-playing-credits-role">${person.role}</p>
             `;
-            track.appendChild(item);
-            });
 
-            // Click handler for items
-            track.querySelectorAll(".img-wrapper").forEach(btn => {
-                btn.addEventListener("click", () => {
-                    const projectId = btn.dataset.id;
-                    currentProjectIndex = projects.findIndex(p => p.id === projectId);
-                    const project = projects[currentProjectIndex];
-                    showProjectDetail(project);
-                    updateProjectPlayer();
+            mobileCreditsList.appendChild(mobileCredit);
+        })
 
-                    document.getElementById("spotify-play").textContent = "pause";
-                });
-            });
+        //mobile about
+        const mobileAboutList = document.getElementById("mobile-playing-about-list");
+        mobileAboutList.innerHTML = project.description;
+
+        //features
+        const featuresList = document.getElementById("profile-playing-features-list");
+
+        featuresList.innerHTML = "";
+
+        project.features.forEach(featureText => {
+            const feature = document.createElement("div");
+            feature.className = "profile-playing-features-person";
+
+            feature.innerHTML = `
+                <p class="profile-playing-features-name">${featureText}</p>
+            `;
+
+            featuresList.appendChild(feature);
+        })
+
+        //mobile features
+        const mobileFeaturesList = document.getElementById("mobile-playing-features-list");
+
+        mobileFeaturesList.innerHTML = "";
+
+        project.features.forEach(featureText => {
+            const mobileFeature = document.createElement("div");
+            mobileFeature.className = "mobile-playing-features-person";
+
+            mobileFeature.innerHTML = `
+                <p class="mobile-playing-features-name">${featureText}</p>
+            `;
+
+            mobileFeaturesList.appendChild(mobileFeature);
+        })
+
+        //technologies
+        const technologiesList = document.getElementById("profile-playing-technologies-list");
+
+        technologiesList.innerHTML = "";
+
+        project.technologies.forEach(technologyText => {
+            const technology = document.createElement("div");
+            technology.className = "profile-playing-technologies-person";
+
+            technology.innerHTML = `
+                <p class="profile-playing-technologies-category">${technologyText.category}</p>
+                <p class="profile-playing-technologies-name">${technologyText.name}</p>
+            `;
+
+            technologiesList.appendChild(technology);
+        })
+
+        //mobile technologies
+        const mobileTechnologiesList = document.getElementById("mobile-playing-technologies-list");
+
+        mobileTechnologiesList.innerHTML = "";
+
+        project.technologies.forEach(technologyText => {
+            const mobileTechnology = document.createElement("div");
+            mobileTechnology.className = "mobile-playing-technologies-person";
+
+            mobileTechnology.innerHTML = `
+                <p class="mobile-playing-technologies-category">${technologyText.category}</p>
+                <p class="mobile-playing-technologies-name">${technologyText.name}</p>
+            `;
+
+            mobileTechnologiesList.appendChild(mobileTechnology);
+        })
+
+        // live button
+        if (project.link && project.link.trim() !== "") {
+            liveBtn.style.display = "inline-block"; // show it
+            liveBtn.onclick = () => window.open(project.link, "_blank");
+        } else {
+            liveBtn.style.display = "none"; // hide it
         }
 
-        function showProjectDetail(project) {
-            detailTitle.textContent = project.name;
-            detailImage.src = project.image;
-            detailCompany.innerHTML = `<i class="material-icons-outlined companyIconHidden">apartment</i> ${project.company}`;
-            detailText.innerHTML = project.description;
+        // repo button
+        if (project.github && project.github.trim() !== "") {
+            repoBtn.style.display = "inline-block"; // show it
+            repoBtn.onclick = () => window.open(project.github, "_blank");
+        } else {
+            repoBtn.style.display = "none"; // hide it
+        }
 
-            // live button
-            if (project.link && project.link.trim() !== "") {
-                liveBtn.style.display = "inline-block"; // show it
-                liveBtn.onclick = () => window.open(project.link, "_blank");
-            } else {
-                liveBtn.style.display = "none"; // hide it
-            }
+        carouselContainer.classList.add("hidden");
 
-            // repo button
-            if (project.github && project.github.trim() !== "") {
-                repoBtn.style.display = "inline-block"; // show it
-                repoBtn.onclick = () => window.open(project.github, "_blank");
-            } else {
-                repoBtn.style.display = "none"; // hide it
-            }
-
-            carouselContainer.classList.add("hidden");
+        if (window.innerWidth > 600) {
             projectDetail.classList.remove("hidden");
         }
+        projectDetail.classList.remove("hidden");
 
-        backBtn.addEventListener("click", () => {
-            projectDetail.classList.add("hidden");
-            carouselContainer.classList.remove("hidden");
-
-            document.getElementById("spotify-play").textContent = "play_arrow";
-        });
-
-        // Simple scrolling
-        prevBtn.addEventListener("click", () => {
-            track.scrollBy({ left: -300, behavior: "smooth" });
-        });
-        nextBtn.addEventListener("click", () => {
-            track.scrollBy({ left: 300, behavior: "smooth" });
-        });
-        });
-
-        GitHubCalendar(".calendar", "Hinoden", { responsive: true, global_stats: false });
-
-        // ANIMATIONS
-        if (window.innerWidth <= 768) {
-            document.querySelector(".courses-container").classList.add("reveal");
-            document.querySelector(".calendar").classList.add("reveal");
-        }
-
-        const reveals = document.querySelectorAll('.reveal');
-
-        const observer1 = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-            entry.target.classList.add('active'); // add animation class
-            observer1.unobserve(entry.target);     // run once
+        //for mobile
+        if (window.innerWidth <= 600){
+            if (!alreadyPlaying){
+                mobilePlayingProfile.classList.remove("hidden");
+                renderMobilePlayingCarousel(project.id);
+                mobileTrack.scrollLeft = 0;
             }
-        });
-        }, { threshold: 0.2 }); // trigger when 20% visible
+            isPlaying = true;
+        } else {
+            updateProfileContainer(true);
+            renderPlayingCarousel(project.id);
+            isPlaying = true;
+            profilePlaying.scrollTop = 0;
+        }
+    }
 
-        reveals.forEach(el => observer1.observe(el));
+    backBtn.addEventListener("click", () => {
+        projectDetail.classList.add("hidden");
+        carouselContainer.classList.remove("hidden");
+
+        document.getElementById("spotify-play").textContent = "play_arrow";
+        isPlaying = false;
+        updateProfileContainer(false);
+    });
+
+    mobilePlayingBack.addEventListener("click", () => {
+        mobilePlayingProfile.classList.add("hidden");
+        projectDetail.classList.add("hidden");
+        carouselContainer.classList.remove("hidden");
+        profileNormal.classList.remove("hidden");
+        document.body.classList.remove("mobile-playing-open");
+        isPlaying = false;
+        document.getElementById("spotify-play").textContent = "play_arrow";
+    });
+
+    mobilePlayingPause.addEventListener("click", () => {
+        mobilePlayingProfile.classList.add("hidden");
+        projectDetail.classList.add("hidden");
+        carouselContainer.classList.remove("hidden");
+        profileNormal.classList.remove("hidden");
+        document.body.classList.remove("mobile-playing-open");
+        isPlaying = false;
+        document.getElementById("spotify-play").textContent = "play_arrow";
+    })
+
+    // Simple scrolling
+    prevBtn.addEventListener("click", () => {
+        track.scrollBy({ left: -300, behavior: "smooth" });
+    });
+    nextBtn.addEventListener("click", () => {
+        track.scrollBy({ left: 300, behavior: "smooth" });
+    });
+    });
+
+    GitHubCalendar(".calendar", "Hinoden", { responsive: true, global_stats: false });
+
+    // ANIMATIONS
+    if (window.innerWidth <= 768) {
+        document.querySelector(".courses-container").classList.add("reveal");
+        document.querySelector(".calendar").classList.add("reveal");
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('active'); // add animation class
+        observer1.unobserve(entry.target);     // run once
+        }
+    });
+    }, { threshold: 0.2 }); // trigger when 20% visible
+
+    reveals.forEach(el => observer1.observe(el));
 
     </script>
 </html>
