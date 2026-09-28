@@ -2322,9 +2322,11 @@ text.ContributionCalendar-label {
         position: fixed;
         inset: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         z-index: 99999;
         background-color: rgb(43, 43, 43);
         overflow-y: auto;
+
+        padding-bottom: env(safe-area-inset-bottom);
     }
 }
