@@ -2197,8 +2197,8 @@ text.ContributionCalendar-label {
         margin-bottom: 60px;
         padding-top: 0px;
         flex-direction: column;
-        overflow: visible;
-        overflow-y: auto;
+        /* overflow: visible; */
+        overflow-y: visible;
         overflow-x: hidden;
     }
 
