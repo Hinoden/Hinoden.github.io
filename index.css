@@ -2086,7 +2086,7 @@ text.ContributionCalendar-label {
         font-size: 1.7vw;
     }
 
-    .carousel3-project-name, .mobile-carousel3-project-name {
+    .carousel3-project-name {
         font-size: 1.5vw;
     }
 
@@ -2121,10 +2121,14 @@ text.ContributionCalendar-label {
         min-height: 100%;
         overflow-y: scroll;
         overflow-x: hidden;
-        scroll-snap-type: y mandatory;
+        scroll-snap-type: y proximity;
     }
 
-    .section {
+    .intro {
+        scroll-snap-align: start;
+    }
+
+    .about {
         scroll-snap-align: start;
     }
 
@@ -2179,6 +2183,10 @@ text.ContributionCalendar-label {
         margin: 0;
     }
 
+    .profile-container {
+        min-height: 0px;
+    }
+
     .about {
         height: auto;
         min-height: 95vh;
@@ -2194,12 +2202,9 @@ text.ContributionCalendar-label {
         /* height: calc(100vh - 70px - 90px); */
         min-height: 0;
         margin-top: 50px;
-        margin-bottom: 60px;
         padding-top: 0px;
         flex-direction: column;
-        /* overflow: visible; */
-        overflow-y: visible;
-        overflow-x: hidden;
+        overflow: visible;
     }
 
     .left-container, .right-container {
@@ -2208,6 +2213,10 @@ text.ContributionCalendar-label {
         min-height: 0;
         height: auto;
         overflow: visible;
+    }
+
+    .right-container {
+        padding-bottom: 60px;
     }
 
     #prof-pic {
@@ -2328,5 +2337,33 @@ text.ContributionCalendar-label {
         overflow-y: auto;
 
         padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .mobile-playing-carousel-title, .mobile-playing-links-title, .mobile-playing-credits-title, .mobile-playing-features-title, .mobile-playing-technologies-title {
+        font-size: 4vw;
+    }
+
+    .mobile-carousel3-project-name {
+        font-size: 3.5vw !important;
+    }
+
+    .mobile-carousel3-project-company {
+        font-size: 3vw !important;
+    }
+
+    .mobile-carousel3-project-company i {
+        font-size: 4vw;
+    }
+
+    #mobile-playing-about-list {
+        font-size: 3.5vw;
+    }
+
+    .mobile-playing-credits-name, .mobile-playing-features-name, .mobile-playing-technologies-category, .mobile-playing-link span, .mobile-playing-link a{
+        font-size: 3.6vw !important;
+    }
+
+    .mobile-playing-credits-role, .mobile-playing-technologies-name {
+        font-size: 3.2vw !important;
     }
 }
