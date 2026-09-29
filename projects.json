@@ -4,8 +4,10 @@
         "name": "AI Opportunity Backpack",
         "company": "Conectado Inc.",
         "image": "./img/projects/conectado.png",
+        "image2": "./img/projects/conectado1.png",
         "video": "./video/projects/conectado.mp4",
-        "description": "The AI Opportunity Backpack is an application under Conectado Inc. featuring an AI chatbot that helps members from underrepresented communities find opportunities such as internships and mentorships, and connect with other users. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>Firebase</span>, and <span class='highlightText'>AI Genkit</span>. It's currently live!",
+        "challenge": "Members of underrepresented communities can face difficulty finding relevant career opportunities such as internships, as well as professional networking opportunities, especially when resources are spread across different platforms.",
+        "description": "The AI Opportunity Backpack is an application built under Conectado Inc. designed to help members discover career opportunities and connect with other users. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>Firebase</span>, and <span class='highlightText'>AI Genkit</span>. It's currently live!",
         "credits": [
             {
                 "name": "Kristina Wong",
@@ -44,7 +46,9 @@
         "name": "Library Application",
         "company": "Personal Project",
         "image": "./img/projects/book-collection-app.png",
+        "image2": "./img/projects/book-collection-app1.png",
         "video": "./video/projects/book-collection-app.mp4",
+        "challenge": "As their collection grows, Readers may have difficulty organizing their book collections and monitoring their reading progress. Without a centralized way to manage their books and reading status, it can be difficult to remember what they have read, what they've dropped, are currently reading, or want to read.",
         "description": "The Library Application was developed with the goal of helping users keep track of their book collections. Built with <span class='highlightText'>ReactJS</span>, <span class='highlightText'>SQL</span>, and using a <span class='highlightText'>Clever-Cloud</span> database, it allows users to add and delete books from their collection, as well as mark books as read, currently reading, dropped, or want to read.",
         "credits": [
             {
@@ -83,7 +87,9 @@
         "name": "World Journal Application",
         "company": "Personal Project",
         "image": "./img/projects/world-journal-app.png",
+        "image2": "./img/projects/world-journal-app1.png",
         "video": "./video/projects/world-journal-app.mp4",
+        "challenge": "People may feel isolated when going through difficult or emotional experiences, and may struggle to find others who can relate to what they are feeling. There is a need for a space where people can share their experiences and discover journal entries from others who may be going through similar situations, whether they be happy, sad, etc.",
         "description": "The World Journal Project was created with the goal of bringing together community through daily journal entries. Built with <span class='highlightText'>ReactJS</span> and using a <span class='highlightText'>MongoDB</span> database, it allows users to add their own daily journal entries to our collection, as well as browse through our collection of journal entries.",
         "credits": [
             {
@@ -122,7 +128,9 @@
         "name": "Tomo Graph",
         "company": "Personal Project",
         "image": "./img/projects/tomo-graph.png",
+        "image2": "./img/projects/tomo-graph1.png",
         "video": "./video/projects/tomo-graph.mp4",
+        "challenge": "Nintendo's Tomodachi Life provides relationship graphs centered around a single character, limiting users from viewing multiple characters and their relationships within the same graph. The graphs are also noncustomizable, making it difficult for users to create and organize relationship networks according to their own needs.",
         "description": "Tomo Graph is an interactive graphing application based on Nintendo's Tomodachi Life. Built with <span class='highlightText'>ReactJS</span> and <span class='highlightText'>ReactFlow</span>, it allows users to create their own custom relationship graphs based on their Tomodachi Life Islands.",
         "credits": [
             {
@@ -153,7 +161,9 @@
         "name": "Hinodle",
         "company": "Personal Project",
         "image": "./img/projects/hinodle.png",
+        "image2": "./img/projects/hinodle1.png",
         "video": "./video/projects/hinodle.mp4",
+        "challenge": "NYT's Wordle limits players to one puzzle per day, requiring them to wait until the next day for a new challenge. This limits replayability for players who want to continue practicing or playing multiple puzzles in a single session.",
         "description": "Hinodle is an interactive Wordle clone that allows users to play the popular word-guessing game with no daily limit. Built with <span class='highlightText'>ReactJS</span>, it features a dynamic interface and tracks keyboard inputs to enhance the gaming experience.",
         "credits": [
             {

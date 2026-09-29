@@ -58,7 +58,7 @@
                                 <div class="about-text">
                                     <h1 id="about-title">Kristina Wong</h1>
                                     <h2 id="about-sub">Web Developer | Engineer | Designer</h2>
-                                    <p id="about-desc">I'm an aspiring software engineer passionate about full-stack web development, where I merge creativity with puzzle-solving to produce user-friendly applications.</p>
+                                    <p id="about-desc">Hi there! I'm an aspiring software engineer passionate about full-stack web development, where I merge creativity with puzzle-solving to produce user-friendly applications.</p>
                                     <p id="about-desc">I strive to build software that simplifies life, enhances accessibility, and brings joy, while constantly seeking new projects to expand my skills.</p>
                                     <p id="about-desc">Outside of coding, I enjoy reading, crocheting, and playing piano and clarinet, hobbies that inspire the creativity in my work.</p>
                                     <p id="about-desc">I'd love to connect with you!</p>
@@ -137,8 +137,20 @@
                             <div class="project-detail hidden">
                                 <h2 id="detail-title"></h2>
                                 <p id="detail-company"></p>
-                                <img id="detail-image" />
-                                <p id="detail-text"></p>
+                                <div class="project-detail-container">
+                                    <img id="detail-image" />
+                                    <div class="project-detail-right">
+                                        <p id="project-detail-overview">Overview</p>
+                                        <p id="detail-text"></p>
+                                    </div>
+                                </div>
+                                <div class="project-detail-container">
+                                    <div class="project-detail-right">
+                                        <p id="project-detail-overview">Challenge</p>
+                                        <p id="detail-text2"></p>
+                                    </div>
+                                    <img id="detail-image2" />
+                                </div>
                                 <div class="project-links">
                                     <button id="liveBtn">Check it out here!</button>
                                     <button id="repoBtn">View the repo on GitHub</button>
@@ -464,6 +476,13 @@
                     </div>
                 </div>
 
+                <div class="mobile-playing-challenge">
+                    <p class="mobile-playing-challenge-title">Problem to Overcome</p>
+                    <div id="mobile-playing-challenge-list">
+                        <!-- Challenge will be displayed here -->
+                    </div>
+                </div>
+
                 <div class="mobile-playing-links">
                     <p class="mobile-playing-links-title">Links</p>
                     <div id="mobile-playing-links-list">
@@ -720,8 +739,10 @@
     const projectDetail = document.querySelector(".project-detail");
     const detailTitle = document.getElementById("detail-title");
     const detailImage = document.getElementById("detail-image");
+    const detailImage2 = document.getElementById("detail-image2");
     const detailCompany = document.getElementById("detail-company");
     const detailText = document.getElementById("detail-text");
+    const detailText2 = document.getElementById("detail-text2");
     const backBtn = document.getElementById("backBtn");
     const liveBtn = document.getElementById("liveBtn");
     const repoBtn = document.getElementById("repoBtn");
@@ -1157,8 +1178,10 @@
     function showProjectDetail(project, alreadyPlaying = false) {
         detailTitle.textContent = project.name;
         detailImage.src = project.image;
+        detailImage2.src = project.image2;
         detailCompany.innerHTML = `<i class="material-icons-outlined companyIconHidden">apartment</i> ${project.company}`;
         detailText.innerHTML = project.description;
+        detailText2.innerHTML = project.challenge;
         playingTitle.textContent = project.name;
         playingCompany.textContent = project.company;
 
@@ -1255,6 +1278,10 @@
         //mobile about
         const mobileAboutList = document.getElementById("mobile-playing-about-list");
         mobileAboutList.innerHTML = project.description;
+
+        //mobile challenge
+        const mobileChallengeList = document.getElementById("mobile-playing-challenge-list");
+        mobileChallengeList.innerHTML = project.challenge;
 
         //features
         const featuresList = document.getElementById("profile-playing-features-list");
