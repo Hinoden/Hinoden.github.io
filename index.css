@@ -702,6 +702,8 @@ button{
     flex-shrink: 0;
     background-color: grey;
     border-radius: 5px;
+    cursor: pointer;
+    touch-action: none;
 }
 
 .mobile-progress {
@@ -709,6 +711,24 @@ button{
     height: 4px;
     background-color: white;
     border-radius: 5px;
+    position: relative;
+}
+
+.mobile-progress::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.mobile-progress-bar:hover .mobile-progress::after {
+    opacity: 1;
 }
 
 .mobile-time-stamps {
@@ -1870,13 +1890,33 @@ text.ContributionCalendar-label {
     height: 4px;
     flex: 1;
     border-radius: 5px;
+    cursor: pointer;
+    touch-action: none;
 }
 
 .spotify-progress {
-    width: 30%;
+    width: 0%;
     height: 100%;
     background-color: white;
     border-radius: 5px;
+    position: relative;
+}
+
+.spotify-progress::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.spotify-progress-bar:hover .spotify-progress::after {
+    opacity: 1;
 }
 
 .spotify-player-right {

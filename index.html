@@ -360,7 +360,7 @@
                     <i class="material-icons grey">repeat</i>
                 </div>
                 <div class="spotify-player-bottom">
-                    <span id="song-start-time">0:50</span>
+                    <span id="song-start-time">0:00</span>
                     <div class="spotify-progress-bar">
                         <div class="spotify-progress"></div>
                     </div>
@@ -481,11 +481,11 @@
     <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <script>
         window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader");
-        const content = document.getElementById("content");
+            const preloader = document.getElementById("preloader");
+            const content = document.getElementById("content");
 
-        preloader.style.display = "none";   // hide loader
-        content.style.display = "block";    // show page
+            preloader.style.display = "none";   // hide loader
+            content.style.display = "block";    // show page
         });
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -714,6 +714,7 @@
     const mobilePlayingCompany = document.getElementById("mobile-playing-company");
 
     let projects = [];
+    let currentProjectIndex = 0;
     let index = 0;
 
     // Load JSON
@@ -723,13 +724,13 @@
             projects = data;
             renderCarousel();
             updateProjectPlayer();
+            updateSpotifyDuration(projects[currentProjectIndex]);
         })
         .catch(error => {
             console.error("Error loading projects.json:", error);
         });
 
     // MUSIC PLAYER
-    let currentProjectIndex = 0;
 
     function updateProjectPlayer() {
         const project = projects[currentProjectIndex];
@@ -749,6 +750,7 @@
             showProjectDetail(project, true);
         }
 
+        updateSpotifyDuration(project);
         updateProjectPlayer();
     }
 
@@ -757,6 +759,10 @@
             selectProject(currentProjectIndex + 1);
         } else {
             selectProject(0);
+        }
+
+        if (window.innerWidth > 600 && !projectDetail.classList.contains("hidden")){       //desktop
+            document.getElementById("spotify-play").textContent = "pause";
         }
     });
 
@@ -772,17 +778,25 @@
         const playButton = document.getElementById("spotify-play");
 
         if (playButton.textContent === "play_arrow"){       //when clicking play button
-            showProjectDetail(projects[currentProjectIndex]);
-            mobilePlayingProfile.scrollTop = 0;
-            right.scrollTop = 0;
+            if (!isPlaying) {       //project details not open yet
+                showProjectDetail(projects[currentProjectIndex]);
+                mobilePlayingProfile.scrollTop = 0;
+                right.scrollTop = 0;
+            } else {        //project details already open
+                video.play();
+            }
             playButton.textContent = "pause";
-            isPlaying = true;
         } else {
-            projectDetail.classList.add("hidden");      //when clicking pause button
-            carouselContainer.classList.remove("hidden");
+            //pause button
+            video.pause();
+
             playButton.textContent = "play_arrow";
-            updateProfileContainer(false);
-            isPlaying = false;
+            // isPlaying = false;
+            // projectDetail.classList.add("hidden");      //when clicking pause button
+            // carouselContainer.classList.remove("hidden");
+            // playButton.textContent = "play_arrow";
+            // updateProfileContainer(false);
+            // isPlaying = false;
         }
     });
 
@@ -791,6 +805,10 @@
             selectProject(currentProjectIndex - 1);
         } else {
             selectProject(projects.length - 1);
+        }
+
+        if (window.innerWidth > 600 && !projectDetail.classList.contains("hidden")){       //desktop
+            document.getElementById("spotify-play").textContent = "pause";
         }
     });
 
@@ -806,7 +824,6 @@
     const profilePlaying = document.getElementById("profile-playing");
     const mobilePlayingProfile = document.getElementById("mobile-playing-profile");
     const mobilePlayingBack = document.getElementById("mobile-playing-back-btn");
-    const mobilePlayingPause = document.getElementById("mobile-pause");
 
     function updateProfileContainer(showPlaying) {
         if (showPlaying){
@@ -936,6 +953,186 @@
         }
     });
 
+    //get time formatted properly
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+
+        return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+    }
+
+    //desktop video
+    const video = document.getElementById("profile-video");
+    const videoSource = document.getElementById("profile-video-source");
+    const spotifyProgress = document.querySelector(".spotify-progress");
+    const spotifyProgressBar = document.querySelector(".spotify-progress-bar");
+    const spotifySongStartTime = document.getElementById("song-start-time");
+    const spotifySongEndTime = document.getElementById("song-end-time");
+
+    //progress video functionality
+    video.addEventListener("timeupdate", () => {
+        if (!video.duration) return;
+
+        const progress = (video.currentTime / video.duration) * 100;
+
+        spotifyProgress.style.width = `${progress}%`;
+
+        spotifySongStartTime.textContent = formatTime(video.currentTime);
+    })
+
+    //click progress bar to skip
+    spotifyProgressBar.addEventListener("click", (event) => {
+        const barWidth = spotifyProgressBar.clientWidth;
+        const clickPosition = event.offsetX;
+
+        const percentage = clickPosition / barWidth;
+
+        video.currentTime = percentage * video.duration;
+    })
+
+    //drag progress bar
+    let isDragging = false;
+
+    function seekVideo(event) {
+        const rect = spotifyProgressBar.getBoundingClientRect();
+
+        let position = event.clientX - rect.left;
+
+        position = Math.max(0, Math.min(position, rect.width));
+
+        const percentage = position / rect.width;
+
+        video.currentTime = percentage * video.duration;
+
+        spotifyProgress.style.width = `${percentage * 100}%`;
+
+        spotifySongStartTime.textContent = formatTime(video.currentTime);
+    }
+
+    spotifyProgressBar.addEventListener("pointerdown", (event) => {
+        isDragging = true;
+
+        spotifyProgressBar.setPointerCapture(event.pointerId);
+
+        seekVideo(event);
+    });
+
+    spotifyProgressBar.addEventListener("pointermove", (event) => {
+        if (!isDragging) return;
+
+        seekVideo(event);
+    })
+
+    spotifyProgressBar.addEventListener("pointerup", (event) => {
+        isDragging = false;
+    })
+
+    spotifyProgressBar.addEventListener("pointercancel", () => {
+        isDragging = false;
+    })
+
+    //get video's end duration
+    video.addEventListener("loadedmetadata", () => {
+        spotifySongEndTime.textContent = formatTime(video.duration);
+    })
+
+    function updateSpotifyDuration(project) {
+        videoSource.src = project.video;
+        video.load();
+
+        video.addEventListener("loadedmetadata", () => {
+            spotifySongEndTime.textContent = formatTime(video.duration);
+            spotifySongStartTime.textContent = "0:00";
+            spotifyProgress.style.width = "0%";
+        }, { once: true });
+    }
+
+    //mobile video
+    const mobileVideo = document.getElementById("mobile-video");
+    const mobilePause = document.getElementById("mobile-pause");
+    const mobileVideoSource = document.getElementById("mobile-video-source");
+    const videoLoading = document.getElementById("video-loading");
+    //mobile video progress
+    const mobileProgress = document.querySelector(".mobile-progress");
+    const mobileProgressBar = document.querySelector(".mobile-progress-bar");
+    const mobileSongStartTime = document.getElementById("mobile-song-start-time");
+    const mobileSongEndTime = document.getElementById("mobile-end-time");
+
+    //click to skip
+    mobileProgressBar.addEventListener("click", (event) => {
+        const barWidth = mobileProgressBar.clientWidth;
+        const clickPosition = event.offsetX;
+
+        const percentage = clickPosition / barWidth;
+
+        mobileVideo.currentTime = percentage * mobileVideo.duration;
+    })
+
+    let isMobileDragging = false;
+
+    function seekMobileVideo(event) {
+        const rect = mobileProgressBar.getBoundingClientRect();
+
+        let position = event.clientX - rect.left;
+
+        position = Math.max(0, Math.min(position, rect.width));
+
+        const percentage = position / rect.width;
+
+        mobileVideo.currentTime = percentage * mobileVideo.duration;
+
+        mobileProgress.style.width = `${percentage * 100}%`;
+
+        mobileSongStartTime.textContent = formatTime(mobileVideo.currentTime);
+    };
+
+    mobileProgressBar.addEventListener("pointerdown", (event) => {
+        isMobileDragging = true;
+        mobileProgressBar.setPointerCapture(event.pointerId);
+        seekMobileVideo(event);
+    });
+
+    mobileProgressBar.addEventListener("pointermove", (event) => {
+        if (!isMobileDragging) return;
+
+        seekMobileVideo(event);
+    });
+
+    mobileProgressBar.addEventListener("pointerup", (event) => {
+        isMobileDragging = false;
+    });
+
+    mobileProgressBar.addEventListener("pointercancel", () => {
+        isMobileDragging = false;
+    })
+
+    //play/pause button functionality
+    mobilePause.addEventListener("click", () => {
+        if (mobileVideo.paused) {
+            mobileVideo.play();
+            mobilePause.textContent = "pause";
+        } else {
+            mobileVideo.pause();
+            mobilePause.textContent = "play_arrow"
+        }
+    });
+
+    //progress video functionality
+    mobileVideo.addEventListener("timeupdate", () => {
+        if (!mobileVideo.duration) return;
+
+        const progress = (mobileVideo.currentTime / mobileVideo.duration) * 100;
+
+        mobileProgress.style.width = `${progress}%`;
+
+        mobileSongStartTime.textContent = formatTime(mobileVideo.currentTime);
+    })
+
+    //get video's end duration
+    mobileVideo.addEventListener("loadedmetadata", () => {
+        mobileSongEndTime.textContent = formatTime(mobileVideo.duration);
+    })
+
     function showProjectDetail(project, alreadyPlaying = false) {
         detailTitle.textContent = project.name;
         detailImage.src = project.image;
@@ -950,15 +1147,6 @@
 
         isPlaying = true;
 
-        //video
-        const video = document.getElementById("profile-video");
-        const videoSource = document.getElementById("profile-video-source");
-
-        //mobile video
-        const mobileVideo = document.getElementById("mobile-video");
-        const mobileVideoSource = document.getElementById("mobile-video-source");
-        const videoLoading = document.getElementById("video-loading");
-
         if (window.innerWidth <= 600) {
             videoLoading.classList.remove("hidden");
             mobileVideo.style.opacity = "0";
@@ -969,6 +1157,7 @@
                 mobileVideo.play();
                 mobileVideo.style.opacity = "1";
                 videoLoading.classList.add("hidden");
+                mobilePause.textContent = "pause";
             }, { once: true});
         } else {
             video.style.opacity = "0";
@@ -1155,6 +1344,14 @@
         projectDetail.classList.add("hidden");
         carouselContainer.classList.remove("hidden");
 
+        //Pause the video
+        video.pause();
+        video.currentTime = 0;
+
+        //reset progress bar
+        spotifyProgress.style.width = "0%";
+        spotifySongStartTime.textContent = "0:00";
+
         document.getElementById("spotify-play").textContent = "play_arrow";
         isPlaying = false;
         updateProfileContainer(false);
@@ -1169,16 +1366,6 @@
         isPlaying = false;
         document.getElementById("spotify-play").textContent = "play_arrow";
     });
-
-    mobilePlayingPause.addEventListener("click", () => {
-        mobilePlayingProfile.classList.add("hidden");
-        projectDetail.classList.add("hidden");
-        carouselContainer.classList.remove("hidden");
-        profileNormal.classList.remove("hidden");
-        document.body.classList.remove("mobile-playing-open");
-        isPlaying = false;
-        document.getElementById("spotify-play").textContent = "play_arrow";
-    })
 
     // Simple scrolling
     prevBtn.addEventListener("click", () => {
