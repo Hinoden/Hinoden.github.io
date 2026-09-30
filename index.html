@@ -72,6 +72,9 @@
                             <!-- VIDEO SEGMENT -->
                             <div id="profile-playing" class="hidden">
                                 <div class="profile-video-wrapper">
+                                    <div id="video-loading2" class="video-loading hidden">
+                                        <div class="loading-spinner"></div>
+                                    </div>
                                     <video id="profile-video" autoplay muted loop playsinline>
                                         <source id="profile-video-source" src="" type="video/mp4">
                                     </video>
@@ -1022,6 +1025,7 @@
     const spotifyProgressBar = document.querySelector(".spotify-progress-bar");
     const spotifySongStartTime = document.getElementById("song-start-time");
     const spotifySongEndTime = document.getElementById("song-end-time");
+    const videoLoading2 = document.getElementById("video-loading2");
 
     //progress video functionality
     video.addEventListener("timeupdate", () => {
@@ -1227,12 +1231,15 @@
                 mobilePause.textContent = "pause";
             }, { once: true});
         } else {
+            videoLoading2.classList.remove("hidden");
             video.style.opacity = "0";
             videoSource.src = project.video;
             video.load();
+
             video.addEventListener("canplay", () => {
                 video.play();
                 video.style.opacity = "1";
+                videoLoading2.classList.add("hidden");
             }, { once: true});
         }
 
