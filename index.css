@@ -1623,16 +1623,34 @@ button{
 }
 
 /* CALENDAR */
-.calendar {
+.calendar-container {
     background-color: rgb(43, 43, 43);
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
     margin-top: 20px;
+}
+
+#calendar-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 1.6vw;
+    padding: 0;
+    margin: 0;
+}
+
+.calendar {
+    padding: 10px;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 243px;
     text-align: center;
     color: white;
+}
+
+.calendar caption {
+    display: none;
 }
 
 :root {
@@ -2123,6 +2141,10 @@ text.ContributionCalendar-label {
         font-size: 2.5vw;
     }
 
+    #calendar-title {
+        font-size: 2.5vw;
+    }
+
     .grid-right p, .grid-left p {
         font-size: 1.5vw;
     }
@@ -2445,6 +2467,10 @@ text.ContributionCalendar-label {
     }
 
     #courses-title {
+        font-size: 3.5vw;
+    }
+
+    #calendar-title {
         font-size: 3.5vw;
     }
 
