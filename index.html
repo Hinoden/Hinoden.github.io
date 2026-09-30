@@ -72,6 +72,12 @@
                                     </video>
 
                                     <div class="profile-video-gradient"></div>
+
+                                    <div class="scroll-hint" id="playing-scroll-hint">
+                                        <span>Scroll for more</span>
+                                        <i class="material-icons">keyboard_arrow_down</i>
+                                    </div>
+
                                     <div class="profile-playing-top">
                                         <p class="profile-playing-title">Featured Projects</p>
                                     </div>
@@ -1088,6 +1094,17 @@
             spotifyProgress.style.width = "0%";
         }, { once: true });
     }
+
+    //scroll hint
+    const scrollHint = document.getElementById("playing-scroll-hint");
+
+    profilePlaying.addEventListener("scroll", () => {
+        if (profilePlaying.scrollTop > 30) {
+            scrollHint.classList.add("fade-away");
+        } else {
+            scrollHint.classList.remove("fade-away");
+        }
+    });
 
     //mobile video
     const mobileVideo = document.getElementById("mobile-video");
