@@ -41,12 +41,17 @@
 
             <!-- SECTION 2 - ABOUT -->
             <section class="about">
-                <nav id="mainNavbar" class="hidden">
+                <nav id="mainNavbar">
                     <div id="left">
                         <i class="material-icons-outlined search">search</i>
                         <h1 id="title"><span class="typing"></span></h1>
                     </div>
-                    <button class="navButtons"><i class="material-icons-outlined navBut">menu</i></button>
+                    <div class="right" id="right">
+                        <a href="mailto:krwong3@gmail.com" target="_blank" rel="noopener noreferrer"><button class="menu-but email"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button></a>
+                        <a href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer"><button class="menu-but github"><img src="./img/navbar/github-svgrepo-com.svg" class="navLogo" id="github"></button></a>
+                        <a href="https://www.linkedin.com/in/kristina-wong23" target="_blank" rel="noopener noreferrer"><button class="menu-but linkedin"><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
+                    </div>
+                    <!-- <button class="navButtons"><i class="material-icons-outlined navBut">menu</i></button> -->
                 </nav>
                 <div class="about-container">
                     <div class="left-container">
@@ -363,7 +368,7 @@
                 </div> -->
             </section>
         </div>
-        <div class="menu-overlay" id="menuOverlay">
+        <!-- <div class="menu-overlay" id="menuOverlay">
             <div class="menu-popup">
                 <button class="close-btn" id="closeMenu">&times;</button>
 
@@ -372,10 +377,9 @@
                     <a href="mailto:krwong3@gmail.com" target="_blank" rel="noopener noreferrer"><button class="menu-but email"><img src="./img/navbar/mail.png" class="navLogo" id="email"></button></a>
                     <a href="https://github.com/Hinoden" target="_blank" rel="noopener noreferrer"><button class="menu-but github"><img src="./img/navbar/github.png" class="navLogo" id="github"></button></a>
                     <a href="https://www.linkedin.com/in/kristina-wong23" target="_blank" rel="noopener noreferrer"><button class="menu-but linkedin"><img src="./img/navbar/linkedin.png" class="navLogo" id="linkedin"></button></a>
-                    <!-- <a href="./img/Full Stack Resume.pdf" target="_blank" rel="noopener noreferrer"><button class="menu-but resume"><i class="material-icons-outlined resumeBut">assignment</i></button></a> -->
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="spotify-player">
             <div class="spotify-player-left">
                 <img id="spotify-player-img" src="" alt="">
@@ -639,24 +643,24 @@
 
     observer.observe(document.querySelector(".about"));
 
-    const menuBtn = document.querySelector('.navButtons');
-    const overlay = document.getElementById('menuOverlay');
-    const closeBtn = document.getElementById('closeMenu');
+    // const menuBtn = document.querySelector('.navButtons');
+    // const overlay = document.getElementById('menuOverlay');
+    // const closeBtn = document.getElementById('closeMenu');
 
-    menuBtn.addEventListener('click', () => {
-        overlay.classList.add('active');
-    });
+    // menuBtn.addEventListener('click', () => {
+    //     overlay.classList.add('active');
+    // });
 
-    closeBtn.addEventListener('click', () => {
-        overlay.classList.remove('active');
-    });
+    // closeBtn.addEventListener('click', () => {
+    //     overlay.classList.remove('active');
+    // });
 
-    // Optional: click outside to close
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            overlay.classList.remove('active');
-        }
-    });
+    // // Optional: click outside to close
+    // overlay.addEventListener('click', (e) => {
+    //     if (e.target === overlay) {
+    //         overlay.classList.remove('active');
+    //     }
+    // });
 
     // SYNC HEIGHTS
     const left = document.querySelector('.left-container');
